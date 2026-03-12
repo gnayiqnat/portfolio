@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource-variable/montserrat": "^5.2.8",
     "@fontsource/libre-barcode-128-text": "^5.2.8",
     "@fontsource/tinos": "^5.2.7",
+    "@hcaptcha/react-hcaptcha": "^2.0.2",
     "@heroui/react": "^3.0.0-beta.2",
     "@heroui/styles": "^3.0.0-beta.2",
     "@tailwindcss/vite": "^4.1.18",
@@ -21,6 +23,7 @@
     "motion": "^12.23.26",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-hook-form": "^7.71.2",
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"

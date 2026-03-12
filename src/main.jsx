@@ -8,7 +8,8 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/montserrat';
 import '@fontsource/libre-barcode-128-text';
 import '@fontsource/tinos';
-
+import '@fontsource-variable/jetbrains-mono';
+	
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 			<App />

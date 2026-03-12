@@ -8,6 +8,7 @@
   --font-tinos: "Tinos", serif;
   --font-mont: 'Montserrat Variable', sans-serif;
   --font-librebarcode: 'Libre Barcode 128 Text';
+  --font-jetbrains: 'JetBrains Mono Variable';
 }
 :root {
   font-family: 'Inter Variable', sans-serif;
