@@ -21,12 +21,12 @@ export default function HeroSection() {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
-			className='grid grid-cols-2 gap-4 h-dvh w-dvw p-24 items-center justify-around md:justify-between'
+			className='grid grid-rows-2 md:grid-cols-2 md:grid-rows-1  gap-4 h-dvh w-dvw p-8 md:p-24 items-center justify-around md:justify-between'
 		>
 			<motion.div className='grid grid-rows-2 gap-4'>
 				<div
 					id={4}
-					className='justify-end pb-8 h-full w-full flex flex-col flex-nowrap'
+					className='order-2 md:order-first justify-center md:justify-end w-full flex flex-col flex-nowrap'
 				>
 					<TextGenerateEffect words='Hello, I am Qi Yang.' />
 					<h1 className='text-3xl font-jetbrains bg-black text-white w-fit pr-2'>
@@ -183,17 +183,17 @@ function HeroCard(n) {
 				<div className='flex flex-row justify-center items-center gap-3'>
 					{' '}
 					<div className='flex flex-row items-center gap-3'>
-						<h3 id='3xl' className='text-3xl font-tinos'>
+						<h3 id='3xl' className='text-2xl md:text-3xl font-tinos'>
 							{'['}
 						</h3>
-						<h4 id='4xl' className='text-4xl font-tinos'>
+						<h4 id='4xl' className='text-3xl md:text-4xl font-tinos'>
 							{'---'}
 							{HeroIcons[n.imageIndex]}
 							{'---'}
 						</h4>
 					</div>
 					<div>
-						<h3 id='3xl' className='text-3xl font-tinos	'>
+						<h3 id='3xl' className='text-2xl md:text-3xl font-tinos	'>
 							{'- { '}
 							{n.text}
 							{' } -'}
