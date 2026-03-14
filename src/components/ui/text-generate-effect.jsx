@@ -34,7 +34,7 @@ export const TextGenerateEffect = ({
 					return (
 						<motion.span
 							key={word + idx}
-							className='dark:text-white text-black opacity-0 font-tinos font-bold text-4xl	'
+							className='dark:text-white text-black opacity-0 font-tinos font-bold md:text-2xl	lg:text-3xl'
 							style={{
 								filter: filter ? 'blur(10px)' : 'none',
 							}}
@@ -52,8 +52,8 @@ export const TextGenerateEffect = ({
 		<div>
 			<div className='flex flex-col'>
 				<div className='flex flex-row gap-2 items-baseline'>
-					<h1 className='text-4xl font-bold '>//</h1>
-					<h1 className=' dark:text-white text-black font-mont font-bold text-4xl leading-snug tracking-wide'>
+					<h1 className='text-2xl lg:text-4xl font-bold '>//</h1>
+					<h1 className=' dark:text-white text-black font-mont font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
 						{renderWords()}
 					</h1>
 				</div>
