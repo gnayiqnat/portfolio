@@ -14,12 +14,12 @@ export default function HeroSection() {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
-			className='grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 h-dvh gap-4 w-dvw p-8 md:p-24 items-center justify-around md:justify-between'
+			className='flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 w-dvw p-8 md:p-24 items-center justify-center md:justify-between'
 		>
-			<motion.div className='grid grid-rows-2 gap-4'>
+			<motion.div className='flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div
 					id={4}
-					className='order-2 md:order-first justify-center md:justify-end w-full flex flex-col flex-nowrap'
+					className='order-2 md:order-first justify-center md:justify-end w-full max-h-fit flex flex-col flex-nowrap'
 				>
 					<TextGenerateEffect words='Hello, I am Qi Yang.' />
 					<h1 className=' text-2xl lg:text-3xl font-jetbrains bg-black text-white w-fit pr-2'>
@@ -34,7 +34,7 @@ export default function HeroSection() {
 					setHeroPressed={setHeroPressed}
 				/>
 			</motion.div>
-			<motion.div className='grid grid-rows-2 gap-4 flex-nowrap'>
+			<motion.div className='flex flex-col w-full md:grid md:grid-rows-2 gap-4 flex-nowrap'>
 				<motion.div className='grid grid-cols-2 gap-4'>
 					<HeroCard
 						text='contact'
@@ -144,7 +144,7 @@ function HeroCard(n) {
 				zIndex: n.isHeroPressed ? 3 : 1,
 			}}
 			id={n.imageIndex}
-			className={`font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-2xl text-black border-3 border-black cursor-pointer`}
+			className={`min-h-32 font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-2xl text-black border-3 border-black cursor-pointer`}
 			initial={{
 				borderBottomWidth: 7,
 				marginTop: 0,
