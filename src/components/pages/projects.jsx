@@ -45,7 +45,7 @@ export default function ProjectSection() {
 				<div className='flex flex-col gap-5'>
 					<div className='flex justify-center'>
 						<h2 className={` text-xl	 md:text-2xl font-jetbrains `}>
-							{`->~=== { projects } ===~<-`}{' '}
+							{`->~== { projects } ==~<-`}{' '}
 							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
 						</h2>
 					</div>

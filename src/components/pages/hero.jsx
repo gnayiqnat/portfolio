@@ -10,19 +10,19 @@ export default function HeroSection() {
 	const [isHeroPressed, setHeroPressed] = useState(false);
 
 	return (
-		<motion.div
+		<motion.div	
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
 			className='flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 w-dvw p-8 md:p-24 items-center justify-center md:justify-between'
 		>
-			<motion.div className='flex flex-col md:grid md:grid-rows-2 md:gap-4'>
+			<motion.div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div
 					id={4}
-					className='order-2 md:order-first justify-center md:justify-end w-full max-h-fit flex flex-col flex-nowrap'
+					className='mt-4 mb-2 sm:m-0 order-2 md:order-first justify-center sm:justify-end w-full  flex flex-col flex-nowrap'
 				>
 					<TextGenerateEffect words='Hello, I am Qi Yang.' />
-					<h1 className=' text-2xl lg:text-3xl font-jetbrains bg-black text-white w-fit pr-2'>
+					<h1 className='text-2xl lg:text-3xl font-jetbrains bg-black text-white w-fit pr-2'>
 						UX & Full-stack Web Developer.
 					</h1>
 				</div>
