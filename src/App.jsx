@@ -28,27 +28,13 @@ Hey there, fancy meeting you here.
 
 */
 function Home() {
-	const [isHero, setHero] = useState(true);
-	const [isFromButtonPressed, setIsFromButtonPressed] = useState(false);
-
-	const ref = useRef(null);
-	const isInView = useInView(ref);
-
-	useEffect(() => {
-		console.log(isHero);
-	}, [isHero]);
-
 	return (
 		<>
 			<ReactLenis root />
 
-			<HeroSection
-				setHero={setHero}
-				setIsFromButtonPress={setIsFromButtonPressed}
-			/>
-
-				<ProjectSection />
-				<ContactSection />
+			<HeroSection />
+			<ProjectSection />
+			<ContactSection />
 		</>
 	);
 }
@@ -64,7 +50,7 @@ function Page404() {
 				setSeconds(seconds - 1);
 			}, 1000);
 		} else if (seconds === 0) {
-			navigate('/')
+			navigate('/');
 		}
 	}, [seconds]);
 
@@ -72,8 +58,8 @@ function Page404() {
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{delay: 1, duration: 1}}
-			className='pt-20 p-3 h-dvh w-dvw flex flex-col gap-30 justify-center items-center'
+			transition={{ delay: 1, duration: 1 }}
+			className='pt-20 p-3 h-svh w-vw flex flex-col gap-30 justify-center items-center'
 		>
 			<div className='flex flex-col items-center'>
 				<h1 className='text-6xl font-tinos'>[404]</h1>
@@ -111,38 +97,4 @@ function App() {
 	);
 }
 
-//
-
 export default App;
-
-/*
-<ReactLenis root />
-
-			<HeroSection
-				setHero={setHero}
-				setIsFromButtonPress={setIsFromButtonPressed}
-			/>
-			{!isHero && (
-				<motion.div className='w-dvw h-dvh' initial={{}} animate={{}}>
-					<NavBar />
-					<ProjectSection />
-					<ContactSection />
-				</motion.div>
-			)}
-				
-*/
-{
-	/* 
-		<form onSubmit={() => { handleSubmit(onSubmit) }}>
-			<input type='text' name='name' required />
-			<input type='email' name='email' required />
-			<textarea name='message' required></textarea>
-			<button type='submit'>Submit</button>
-			<p>{result}</p>
-			<HCaptcha
-				sitekey='50b2fe65-b00b-4b9e-ad62-3ba471098be2'
-				reCaptchaCompat={false}
-				onVerify={onHCaptchaChange}
-			/>
-		</form> */
-}

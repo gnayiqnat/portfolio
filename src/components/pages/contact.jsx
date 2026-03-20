@@ -57,7 +57,7 @@ export default function ContactSection() {
 	return (
 		<>
 			<motion.div
-				id='projects'
+				id='contact'
 				className={`m-7 sm:m-16 md:m-24 p-4 gap-5 border-black border-3 rounded-2xl flex flex-col items-center justify-center bg-background pt-10 pb-10 `}
 			>
 				{' '}
