@@ -1,13 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ReactLenis } from 'lenis/react';
-import NavBar from './components/nav-bar';
-import { useInView } from 'motion/react';
 import HeroSection from './components/pages/hero';
 import ProjectSection from './components/pages/projects';
 import ContactSection from './components/pages/contact';
 import { motion } from 'motion/react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router';
-import { BorderButton } from './components/border-button';
 import { Button } from '@heroui/react';
 
 /*

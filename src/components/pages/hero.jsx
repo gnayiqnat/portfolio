@@ -1,14 +1,10 @@
-import { AnimatePresence, motion, useAnimate } from 'motion/react';
+import { motion } from 'motion/react';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-import { Card } from '@heroui/react';
 import { FaRegNewspaper } from 'react-icons/fa';
 import { LuConstruction, LuInfo, LuMail } from 'react-icons/lu';
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
 import { useLenis } from 'lenis/react';
 
 export default function HeroSection() {
-	const lenis = useLenis();
 
 	return (
 		<motion.div

@@ -11,7 +11,7 @@ import {
 	TextField,
 } from '@heroui/react';
 import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { LuInfo, LuMailCheck } from 'react-icons/lu';
 

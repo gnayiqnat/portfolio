@@ -1,11 +1,8 @@
-import { Button, Card, Chip } from '@heroui/react';
+import { Card, Chip } from '@heroui/react';
 import { motion } from 'motion/react';
-import { BorderButton } from '../border-button';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router';
 
 const websites = [
 	{
