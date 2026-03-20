@@ -76,10 +76,6 @@ export default function ProjectSection() {
 
 function WebCard(n) {
 	const properties = n.website;
-
-	useEffect(() => {
-		console.log(properties);
-	}, []);
 	return (
 		<>
 			<Card

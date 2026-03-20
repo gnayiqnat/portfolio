@@ -28,10 +28,6 @@ export default function ContactSection() {
 	const [email, setEmail] = useState('');
 	const isEmailInvalid = !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 
-	useEffect(() => {
-		console.log('eeemm', isEmailInvalid);
-	}, [isEmailInvalid]);
-
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		setTimeout(() => {

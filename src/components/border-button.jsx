@@ -19,9 +19,6 @@ export function BorderButton(n) {
 					marginBottom: -4,
 					transition: { duration: 0.1 },
 				}}
-				onClick={() => {
-					console.log('clicked');
-				}}
 			>
 				{n.content}
 			</motion.button>

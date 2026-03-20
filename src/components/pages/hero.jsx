@@ -118,7 +118,6 @@ function HeroCard(n) {
 				);
 			}, 1500);
 			setTimeout(() => {
-				console.log(e);
 				navigate(`/${n.text}`, { state: { ref: 'hero' } });
 			}, 3000);
 		}
