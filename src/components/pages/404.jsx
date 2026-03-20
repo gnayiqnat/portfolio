@@ -1,3 +1,8 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { motion } from 'motion/react';
+import { Button } from "@heroui/react";
+
 export default function Page404() {
 	const [seconds, setSeconds] = useState(5);
 	const navigate = useNavigate();
