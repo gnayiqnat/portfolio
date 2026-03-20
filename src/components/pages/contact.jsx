@@ -1,161 +1,304 @@
-import HCaptcha from "@hcaptcha/react-hcaptcha";
-import { Button, FieldError, Form, Input, Label, Surface, TextField } from "@heroui/react";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import {
+	Button,
+	FieldError,
+	Form,
+	Input,
+	Label,
+	ProgressCircle,
+	Surface,
+	TextArea,
+	TextField,
+} from '@heroui/react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { LuInfo, LuMailCheck } from 'react-icons/lu';
 
 export default function ContactSection() {
-  
-  const { register, handleSubmit, setValue } = useForm({
-    defaultValues: {},
-  });
+	const { register, handleSubmit, setValue, reset } = useForm({
+		defaultValues: {},
+	});
 
-  const onHCaptchaChange = (token) => {
-    setValue('h-captcha-response', token);
-  };
-  const [page, setPage] = useState(1);
-  const [result, setResult] = useState('');
-  const [email, setEmail] = useState(null);
-  const isEmailInvalid = !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+	const onHCaptchaChange = (token) => {
+		setValue('h-captcha-response', token);
+	};
+	const [page, setPage] = useState(1);
+	const [result, setResult] = useState('');
+	const [email, setEmail] = useState('');
+	const isEmailInvalid = !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 
-  useEffect(() => {
-    console.log('eeemm', isEmailInvalid);
-  }, [isEmailInvalid]);
+	useEffect(() => {
+		console.log('eeemm', isEmailInvalid);
+	}, [isEmailInvalid]);
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult('Sending....');
-    const formData = new FormData(event.target);
-    
-    formData.append('email', email);
+	const onSubmit = async (event) => {
+		event.preventDefault();
+		setTimeout(() => {
+			setPage(3);
+		}, 500);
+		const emailApiKey = import.meta.env.VITE_PUBLIC_EMAIL_API_KEY; // Public Web3Forms API key
 
-    formData.append('access_key', 'abc'); //----------------------------------------
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
+		setResult('Sending....');
+		const formData = new FormData(event.target);
 
-    const data = await response.json();
-    if (data.success) {
-      setResult('Form Submitted Successfully');
-      event.target.reset();
-    } else {
-      setResult('Error');
-    }
-  };
-  return (
-			<>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ delay: 1, duration: 1 }}
-					id='projects'
-					className='flex flex-col w-dvw h-dvh items-center justify-center bg-background pt-10 pb-10'
-				>
-					{' '}
-					<div className='h-44'>
-						<h2 className='text-2xl font-jetbrains font-bold'>
-							--- CONTACT ----------------------------
-						</h2>
-						<div className='flex flex-row items-start max-h-72'>
-							<img className='w-32' src='/ascii-phone.png' />
+		formData.append('email', email);
 
-							<Surface className='w-full'>
-								<Form
-									className='pl-7 pr-8 w-full mt-5 flex flex-col gap-3'
-									onSubmit={onSubmit}
+		formData.append('access_key', emailApiKey);
+		const response = await fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			body: formData,
+		});
+
+		const data = await response.json();
+		if (data.success) {
+			setResult('Form Submitted Successfully :)');
+			event.target.reset();
+		} else {
+			setResult('Error');
+		}
+	};
+	return (
+		<>
+			<motion.div
+				id='projects'
+				className={`m-7 sm:m-16 md:m-24 p-4 gap-5 border-black border-3 rounded-2xl flex flex-col items-center justify-center bg-background pt-10 pb-10 `}
+			>
+				{' '}
+				<h2 className={` text-xl md:text-2xl font-jetbrains `}>
+					{`>== { get in touch } ==<`}{' '}
+				</h2>
+				<div className='md:max-w-[50vw] w-full flex flex-col sm:flex-row items-start '>
+					<Surface className='w-full'>
+						{' '}
+						{page === 3 ? (
+							<>
+								<motion.div
+									className='flex flex-col justify-center items-center min-h-64'
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
 								>
-									<AnimatePresence>
-										{page === 1 ? (
-											<>
-												<motion.div className='w-full flex flex-row items-end gap-3'>
-													<TextField
-														className='w-full'
-														isRequired
-														name='email'
-														type='email'
-														onChange={(e) => {
-															setEmail(e);
+									{result === '' ? (
+										<div className='flex flex-col gap-9'>
+											<div className='flex flex-row gap-3 justify-center items-center'>
+												<ProgressCircle size='md' isIndeterminate aria-label='Loading'>
+													<ProgressCircle.Track>
+														<ProgressCircle.TrackCircle className='stroke-gray' />
+														<ProgressCircle.FillCircle className='stroke-black' />
+													</ProgressCircle.Track>
+												</ProgressCircle>
+												<Label className='text-lg font-jetbrains'>Loading</Label>
+											</div>
+											<motion.div
+												initial={{ opacity: 0 }}
+												animate={{ opacity: 1 }}
+												transition={{ delay: 5, duration: 1 }}
+											>
+												<Button
+													className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+													onClick={() => {
+														reset();
+														setPage(1);
+														setEmail('');
+														setResult('');
+													}}
+												>
+													Not working? Reset the form
+												</Button>
+											</motion.div>
+										</div>
+									) : (
+										<>
+											{result == 'Form Submitted Successfully :)' ? (
+												<motion.div
+													initial={{ opacity: 0 }}
+													animate={{ opacity: 1 }}
+													transition={{ delay: 0.5, duration: 0.5 }}
+													className='flex flex-col gap-4'
+												>
+													<div>
+														<LuMailCheck size={36} className='text-xl' />
+														<h2 className='text-xl font-jetbrains font-bold'>{`${result}`}</h2>
+													</div>
+													<Button
+														className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+														onClick={() => {
+															reset();
+															setPage(1);
+															setEmail('');
+															setResult('');
 														}}
-														isInvalid={isEmailInvalid}
 													>
-														<Label>Email</Label>
-														<div className='w-full flex flex-row gap-1'>
-															<Input
-																fullWidth
-																className='border-2 border-black rounded-sm'
-																placeholder='john@example.com'
-																value={email}
-															/>
-															{!isEmailInvalid && (
-																<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-																	<Button
-																		onClick={() => {
-																			setPage(2);
-																		}}
-																		className='rounded-sm bg-gray-900 text-gray-200 ml-2'
-																	>
-																		{'->'}
-																	</Button>
-																</motion.div>
-															)}
-														</div>
-														{isEmailInvalid && (
-															<FieldError>Please enter a valid email address</FieldError>
-														)}
-													</TextField>
+														Return
+													</Button>
 												</motion.div>
-											</>
-										) : (
-											<>
-												<TextField isRequired name='text' type='text'>
-													<Label>Name</Label>
+											) : (
+												<motion.div
+													initial={{ opacity: 0 }}
+													animate={{ opacity: 1 }}
+													transition={{ delay: 0.5, duration: 0.5 }}
+													className='flex flex-col gap-4'
+												>
+													<LuInfo size={36} />{' '}
+													<h2 className='text-xl font-jetbrains font-bold'>{`${result}`}</h2>
+													<motion.div
+														initial={{ opacity: 0 }}
+														animate={{ opacity: 1 }}
+														transition={{ delay: 4, duration: 0.5 }}
+													>
+														<Button
+															className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+															onClick={() => {
+																reset();
+																setPage(1);
+																setEmail('');
+																setResult('');
+															}}
+														>
+															Cancel and return
+														</Button>
+													</motion.div>
+												</motion.div>
+											)}
+										</>
+									)}
+								</motion.div>
+							</>
+						) : (
+							<Form
+								className=' pl-7 pr-8 mt-5 flex flex-col gap-3 '
+								onSubmit={onSubmit}
+							>
+								{' '}
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ delay: 0.5, duration: 1 }}
+								>
+									<h4 className='opacity-40 '>
+										{page}/2{' '}
+										{page === 2
+											? `Sending an email as ${email}.`
+											: 'Please enter your email.'}
+									</h4>
+								</motion.div>
+								{page === 1 ? (
+									<AnimatePresence>
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											transition={{ delay: 0.5, duration: 1 }}
+											className='flex flex-row items-end gap-3'
+										>
+											<TextField
+												fullWidth
+												className='text-lg'
+												isRequired
+												name='email'
+												type='email'
+												onChange={(e) => {
+													setEmail(e);
+												}}
+												isInvalid={isEmailInvalid}
+											>
+												<Label className='text-lg'>Email</Label>
+												<div className='w-full flex flex-col sm:flex-row gap-1'>
 													<Input
+														fullWidth
+														className=' w-full border-2 border-black rounded-sm text-lg'
+														placeholder='john@example.com'
+														value={email}
+													/>
+													{!isEmailInvalid && (
+														<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+															<Button
+																onClick={() => {
+																	setPage(2);
+																}}
+																className='sm:h-full w-full sm:w-fit rounded-sm bg-gray-900 text-gray-200 sm:ml-2'
+															>
+																<span className='hidden sm:inline text-xl'>{' ->'}</span>{' '}
+																<span className='sm:hidden text-lg'>{'Next ->'}</span>
+															</Button>
+														</motion.div>
+													)}
+												</div>
+												{isEmailInvalid && (
+													<FieldError className='text-sm'>
+														Please enter a valid email address
+													</FieldError>
+												)}
+											</TextField>
+										</motion.div>
+									</AnimatePresence>
+								) : (
+									<AnimatePresence>
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											className='flex flex-col gap-4'
+										>
+											<div>
+												<TextField isRequired name='text' type='text'>
+													<Label className='text-lg'>Name</Label>
+													<Input
+														fullWidth
 														name='name'
-														className='border-2 border-black rounded-sm'
+														className=' border-2 border-black rounded-sm text-lg'
 														placeholder='What is your name?'
 													/>
 													<FieldError />
 												</TextField>
-												<Label className='-mb-2'>Message</Label>
-												<TextArea
-													name='message'
-													className='border-2 border-black rounded-sm'
-													required
-													placeholder='Message'
-												></TextArea>
-												<div class='h-captcha' data-captcha='true'></div>
-												<HCaptcha
-													sitekey='50b2fe65-b00b-4b9e-ad62-3ba471098be2'
-													reCaptchaCompat={false}
-													onVerify={onHCaptchaChange}
-												/>
-												<div className='flex flex-row gap-1 flex-nowrap'>
-													<Button
-														className='border-black rounded-sm border-2 bg-gray-50'
-														variant='outline'
-														onClick={() => {
-															setPage(1);
-														}}
-													>
-														Cancel
-													</Button>
-													<Button
-														type='submit'
-														className='border-black rounded-sm border-2 bg-gray-900 text-gray-100'
-													>
-														Submit
-													</Button>
+
+												<TextField isRequired>
+													<Label className='text-lg'>Message</Label>
+													<TextArea
+														name='message'
+														className='border-2 border-black rounded-sm text-lg'
+														isRequired
+														placeholder='Message'
+													></TextArea>
+												</TextField>
+											</div>
+											<div>
+												<div className='h-captcha' data-captcha='true'></div>
+												<div className='w-full max-w-[65vw]  flex justify-center sm:justify-start'>
+													<HCaptcha
+														size='normal'
+														sitekey='50b2fe65-b00b-4b9e-ad62-3ba471098be2'
+														reCaptchaCompat={false}
+														onVerify={onHCaptchaChange}
+													/>
 												</div>
-											</>
-										)}
+											</div>
+											<div className='flex flex-col sm:flex-row gap-1 flex-nowrap'>
+												<Button
+													fullWidth
+													className='w-full sm:w-fit border-black rounded-sm border-2 bg-gray-50 text-lg sm:p-5'
+													variant='outline'
+													onClick={() => {
+														setPage(1);
+													}}
+												>
+													Cancel
+												</Button>
+												<Button
+													type='submit'
+													className='w-full sm:w-fit order-first sm:order-last border-black rounded-sm border-2 bg-gray-900 text-gray-100 text-lg p-5'
+												>
+													Submit
+												</Button>
+											</div>
+										</motion.div>
 									</AnimatePresence>
-								</Form>
-							</Surface>
-						</div>
-					</div>
-				</motion.div>
-			</>
-		);
+								)}
+							</Form>
+						)}
+					</Surface>
+				</div>
+			</motion.div>
+		</>
+	);
 }
