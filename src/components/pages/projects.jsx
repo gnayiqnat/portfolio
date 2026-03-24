@@ -28,8 +28,6 @@ const websites = [
 ];
 
 export default function ProjectSection() {
-
-
 	return (
 		<>
 			<motion.div
@@ -38,12 +36,12 @@ export default function ProjectSection() {
 				exit={{ opacity: 0 }}
 				transition={{ delay: 1, duration: 1 }}
 				id='projects'
-				className='m-7 sm:m-16 md:m-24 p-4 border-black border-3 rounded-2xl flex flex-col gap-10 items-center justify-center bg-background pt-5 pb-10'
+				className='bg-white rounded-sm border m-7 p-4 flex flex-col gap-10 items-center justify-center pt-10 pb-10'
 			>
 				{' '}
 				<div className='flex flex-col gap-5'>
 					<div className='flex justify-center'>
-						<h2 className={` text-xl	 md:text-2xl font-jetbrains `}>
+						<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
 							{`->~== { projects } ==~<-`}{' '}
 							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
 						</h2>
@@ -78,7 +76,7 @@ function WebCard(n) {
 	return (
 		<>
 			<Card
-				className={`border-black border-[2.2px] w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-md`}
+				className={`border-gray-50 border-5  w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
 			>
 				<Card.Header className='flex gap-2.5'>
 					<img

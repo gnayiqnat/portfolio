@@ -58,14 +58,14 @@ export default function ContactSection() {
 		<>
 			<motion.div
 				id='contact'
-				className={`m-7 sm:m-16 md:m-24 p-4 gap-5 border-black border-3 rounded-2xl flex flex-col items-center justify-center bg-background pt-10 pb-10 `}
+				className={`m-7 p-4 gap-5 border bg-white border-sm flex flex-col items-center justify-center pt-10 pb-10 `}
 			>
 				{' '}
-				<h2 className={` text-xl md:text-2xl font-jetbrains `}>
+				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
 					{`>== { get in touch } ==<`}{' '}
 				</h2>
 				<div className='md:max-w-[50vw] w-full flex flex-col sm:flex-row items-start '>
-					<Surface className='w-full'>
+					<Surface className='w-full bg-inherit'>
 						{' '}
 						{page === 3 ? (
 							<>
@@ -162,7 +162,7 @@ export default function ContactSection() {
 							</>
 						) : (
 							<Form
-								className=' pl-7 pr-8 mt-5 flex flex-col gap-3 '
+								className=' pl-7 pr-8 mt-5 flex flex-col gap-8'
 								onSubmit={onSubmit}
 							>
 								{' '}
@@ -171,7 +171,7 @@ export default function ContactSection() {
 									animate={{ opacity: 1 }}
 									transition={{ delay: 0.5, duration: 1 }}
 								>
-									<h4 className='opacity-40 '>
+									<h4 className='opacity-40 font-jetbrains'>
 										{page}/2{' '}
 										{page === 2
 											? `Sending an email as ${email}.`
@@ -198,11 +198,11 @@ export default function ContactSection() {
 												}}
 												isInvalid={isEmailInvalid}
 											>
-												<Label className='text-lg'>Email</Label>
-												<div className='w-full flex flex-col sm:flex-row gap-1'>
+												<Label className='text-lg font-jetbrains'>Email</Label>
+												<div className='w-full flex flex-col sm:flex-row gap-3 sm:gap-1'>
 													<Input
 														fullWidth
-														className=' w-full border-2 border-black rounded-sm text-lg'
+														className=' w-full border-3 border-gray-50 rounded-xs text-lg'
 														placeholder='john@example.com'
 														value={email}
 													/>
@@ -212,10 +212,10 @@ export default function ContactSection() {
 																onClick={() => {
 																	setPage(2);
 																}}
-																className='sm:h-full w-full sm:w-fit rounded-sm bg-gray-900 text-gray-200 sm:ml-2'
+																className='sm:h-full w-full sm:w-fit rounded-sm border-3 border-gray-200 bg-white text-gray-700 border-dashed sm:ml-2'
 															>
-																<span className='hidden sm:inline text-xl'>{' ->'}</span>{' '}
-																<span className='sm:hidden text-lg'>{'Next ->'}</span>
+																<span className='hidden sm:inline text-xl font-jetbrains'>{' ->'}</span>{' '}
+																<span className='sm:hidden text-lg font-jetbrains'>{'Next ->'}</span>
 															</Button>
 														</motion.div>
 													)}
@@ -234,58 +234,61 @@ export default function ContactSection() {
 											initial={{ opacity: 0 }}
 											animate={{ opacity: 1 }}
 											exit={{ opacity: 0 }}
-											className='flex flex-col gap-4'
+											className='flex flex-col gap-14'
 										>
-											<div>
+											<div className='flex flex-col gap-5'>
 												<TextField isRequired name='text' type='text'>
-													<Label className='text-lg'>Name</Label>
+													<Label className='text-lg font-jetbrains'>Name</Label>
 													<Input
 														fullWidth
 														name='name'
-														className=' border-2 border-black rounded-sm text-lg'
+														className='font-jetbrains font-light border-3 text-lg border-gray-50 rounded-xs '
 														placeholder='What is your name?'
 													/>
 													<FieldError />
 												</TextField>
 
 												<TextField isRequired>
-													<Label className='text-lg'>Message</Label>
+													<Label className='text-lg font-jetbrains'>Message</Label>
 													<TextArea
 														name='message'
-														className='border-2 border-black rounded-sm text-lg'
+														className='border-3 text-lg font-light font-jetbrains border-gray-50 rounded-xs '
 														isRequired
 														placeholder='Message'
+														rows={5}
 													></TextArea>
 												</TextField>
 											</div>
-											<div>
-												<div className='h-captcha' data-captcha='true'></div>
-												<div className='w-full max-w-[65vw]  flex justify-center sm:justify-start'>
-													<HCaptcha
-														size='normal'
-														sitekey='50b2fe65-b00b-4b9e-ad62-3ba471098be2'
-														reCaptchaCompat={false}
-														onVerify={onHCaptchaChange}
-													/>
+											<div className='flex flex-col gap-4'>
+												<div>
+													<div className='h-captcha' data-captcha='true'></div>
+													<div className='w-full max-w-[65vw]  flex justify-center sm:justify-start'>
+														<HCaptcha
+															size='normal'
+															sitekey='50b2fe65-b00b-4b9e-ad62-3ba471098be2'
+															reCaptchaCompat={false}
+															onVerify={onHCaptchaChange}
+														/>
+													</div>
 												</div>
-											</div>
-											<div className='flex flex-col sm:flex-row gap-1 flex-nowrap'>
-												<Button
-													fullWidth
-													className='w-full sm:w-fit border-black rounded-sm border-2 bg-gray-50 text-lg sm:p-5'
-													variant='outline'
-													onClick={() => {
-														setPage(1);
-													}}
-												>
-													Cancel
-												</Button>
-												<Button
-													type='submit'
-													className='w-full sm:w-fit order-first sm:order-last border-black rounded-sm border-2 bg-gray-900 text-gray-100 text-lg p-5'
-												>
-													Submit
-												</Button>
+												<div className='flex flex-col sm:flex-row gap-1 flex-nowrap'>
+													<Button
+														fullWidth
+														className='font-jetbrains w-full sm:w-fit border-gray-400 text-gray-500 rounded-xs border-2  text-lg sm:p-5'
+														variant='outline'
+														onClick={() => {
+															setPage(1);
+														}}
+													>
+														Cancel
+													</Button>
+													<Button
+														type='submit'
+														className='font-jetbrains w-full sm:w-fit order-first sm:order-last border-black rounded-xs border-2 bg-gray-900 text-gray-100 text-lg p-5'
+													>
+														Submit
+													</Button>
+												</div>
 											</div>
 										</motion.div>
 									</AnimatePresence>
