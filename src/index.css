@@ -14,7 +14,7 @@
   font-family: 'Inter Variable', sans-serif;
   --acme-canvas-color: oklch(0.967 0.003 264.542);
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(98.75% 0 0);
   --foreground: oklch(0.145 0 0);
   --card: lab(98.62% 0.01 -0.01);
   --card-foreground: oklch(0.145 0 0);
