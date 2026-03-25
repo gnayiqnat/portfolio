@@ -62,8 +62,11 @@ export default function ContactSection() {
 			>
 				{' '}
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
-					{`>== { get in touch } ==<`}{' '}
+					{`>= { get in touch } <=`}{' '}
 				</h2>
+				<h3 className='px-0 sm:px-8 font-jetbrains max-w-150 opacity-50 text-center text-balance'>
+					Drop an email,  don't worry, there's a chance I won't bite.
+				</h3>
 				<div className='md:max-w-[50vw] w-full flex flex-col sm:flex-row items-start '>
 					<Surface className='w-full bg-inherit'>
 						{' '}
@@ -214,8 +217,12 @@ export default function ContactSection() {
 																}}
 																className='sm:h-full w-full sm:w-fit rounded-sm border-3 border-gray-200 bg-white text-gray-700 border-dashed sm:ml-2'
 															>
-																<span className='hidden sm:inline text-xl font-jetbrains'>{' ->'}</span>{' '}
-																<span className='sm:hidden text-lg font-jetbrains'>{'Next ->'}</span>
+																<span className='hidden sm:inline text-xl font-jetbrains'>
+																	{' ->'}
+																</span>{' '}
+																<span className='sm:hidden text-lg font-jetbrains'>
+																	{'Next ->'}
+																</span>
 															</Button>
 														</motion.div>
 													)}

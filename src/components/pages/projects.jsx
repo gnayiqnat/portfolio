@@ -40,11 +40,14 @@ export default function ProjectSection() {
 			>
 				{' '}
 				<div className='flex flex-col gap-5'>
-					<div className='flex justify-center'>
+					<div className='w-full flex flex-col justify-center items-center gap-3'>
 						<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
-							{`->~== { projects } ==~<-`}{' '}
+							{`>~== { projects } ==~<`}{' '}
 							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
-						</h2>
+						</h2>{' '}
+						<h3 className='px-0 sm:px-8 font-jetbrains max-w-125 opacity-50 text-center text-balance'>
+							A full collection of both professional projects and stupid ideas.
+						</h3>
 					</div>
 					<div className='justify-around items-between w-full'>
 						{/*<div className='h-fit w-fit'>
