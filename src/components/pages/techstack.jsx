@@ -21,9 +21,12 @@ export default function TechstackSection() {
 				id='about'
 				className='m-7 mt-0 mb-0 p-7 md:p-16 lg:p-24 lg:pb-7 lg:pt-10 bg-white rounded-sm border flex flex-col gap-10 items-center justify-center pt-10 pb-10'
 			>
-				<h2 className='text-xl md:text-2xl font-jetbrains font-light'>
-					{`->~== { techstack } ==~<-`}{' '}
-				</h2>
+				<div className='flex flex-col justify-center items-center gap-3'>
+					<h2 className='text-xl md:text-2xl font-jetbrains font-light'>
+						{`->~= { techstack } =~<-`}{' '}
+					</h2>
+					
+				</div>
 				<div className='flex flex-row basis-2 flex-wrap flex-1 gap-4 justify-center items-center'>
 					<TechstackCard logo={<IoLogoHtml5 />} name='HTML' />{' '}
 					<TechstackCard logo={<IoLogoCss3 />} name='CSS' />{' '}
