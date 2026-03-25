@@ -16,7 +16,7 @@ import { useForm } from 'react-hook-form';
 import { LuInfo, LuMailCheck } from 'react-icons/lu';
 
 export default function ContactSection() {
-	const { register, handleSubmit, setValue, reset } = useForm({
+	const { setValue, reset } = useForm({
 		defaultValues: {},
 	});
 
@@ -26,7 +26,7 @@ export default function ContactSection() {
 	const [page, setPage] = useState(1);
 	const [result, setResult] = useState('');
 	const [email, setEmail] = useState('');
-	const isEmailInvalid = !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+	const isEmailInvalid = email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -65,7 +65,7 @@ export default function ContactSection() {
 					{`>= { get in touch } <=`}{' '}
 				</h2>
 				<h3 className='px-0 sm:px-8 font-jetbrains max-w-150 opacity-50 text-center text-balance'>
-					Drop an email,  don't worry, there's a chance I won't bite.
+					Drop an email, don't worry, there's a chance I won't bite.
 				</h3>
 				<div className='md:max-w-[50vw] w-full flex flex-col sm:flex-row items-start '>
 					<Surface className='w-full bg-inherit'>
@@ -209,19 +209,19 @@ export default function ContactSection() {
 														placeholder='john@example.com'
 														value={email}
 													/>
-													{!isEmailInvalid && (
+													{isEmailInvalid === false && (
 														<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 															<Button
 																onClick={() => {
 																	setPage(2);
 																}}
-																className='sm:h-full w-full sm:w-fit rounded-sm border-3 border-gray-200 bg-white text-gray-700 border-dashed sm:ml-2'
+																className='sm:h-full w-full sm:w-fit border-gray-600 rounded-xs border-3 bg-gray-900 text-gray-100 sm:ml-2'
 															>
-																<span className='hidden sm:inline text-xl font-jetbrains'>
-																	{' ->'}
+																<span className='hidden sm:inline text-lg font-jetbrains'>
+																	{'=>'}
 																</span>{' '}
 																<span className='sm:hidden text-lg font-jetbrains'>
-																	{'Next ->'}
+																	{'Next =>'}
 																</span>
 															</Button>
 														</motion.div>
