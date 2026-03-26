@@ -20,7 +20,7 @@ export default function HeroSection() {
 						animate={{ opacity: 1 }}
 						transition={{ delay: 3, duration: 0.75 }}
 					>
-						<h1 className='text-2xl lg:text-3xl font-jetbrains bg-gray-800 text-gray-100 w-fit px-2'>
+						<h1 className='text-2xl lg:text-3xl font-jetbrains bg-gray-800 text-gray-100 w-fit pr-2 pl-2'>
 							UX & Full-stack Web Developer.
 						</h1>
 					</motion.div>
@@ -91,9 +91,11 @@ function HeroCard(n) {
 					</div>
 					<div>
 						<h3 className='text-xl font-jetbrains'>
-							{'-{ '}
+							<span className='hidden sm:visible'>-</span>
+							{'{ '}
 							{n.text}
-							{' }-'}
+							{' }'}
+							<span className='hidden sm:visible'>-</span>
 						</h3>
 					</div>
 				</>
