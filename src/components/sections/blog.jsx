@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, Chip, Separator } from '@heroui/react';
 import { motion } from 'motion/react';
 import { LuMessageSquare } from 'react-icons/lu';
@@ -11,7 +13,7 @@ export default function BlogSection() {
 				exit={{ opacity: 0 }}
 				transition={{ delay: 1, duration: 1 }}
 				id='blog'
-				className='bg-white rounded-sm border m-7 my-15 p-8 py-10 px-8 md:px-16 lg:px-32 flex flex-col gap-4 items-center justify-center'
+				className='max-w-230 bg-white rounded-sm border m-7 my-15 p-8 py-10 px-8 md:px-16 lg:px-32 flex flex-col gap-4 items-center justify-center'
 			>
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
 					{`->~== { blog } ==~<-`} {/*{`--->>>~=== { projects } ===~<<<<<---`} */}
@@ -29,9 +31,13 @@ export default function BlogSection() {
 
 function BlogCard() {
 	return (
-		<motion.div initial={{scale: 1}} whileHover={{scale: 0.99}} whileTap={{scale: 0.93}}>
+		<motion.div
+			initial={{ scale: 1 }}
+			whileHover={{ scale: 0.99 }}
+			whileTap={{ scale: 0.93 }}
+		>
 			<Card className='cursor-pointer border border-gray-50 w-full items-stretch sm:flex-row rounded-xl'>
-				<div className='relative h-35 w-full shrink-0 overflow-hidden rounded-md sm:h-[120px] sm:w-[120px]'>
+				<div className='relative h-35 w-full shrink-0 overflow-hidden rounded-md sm:h-30 sm:w-30'>
 					<img
 						alt='Cherries'
 						className=' pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none'

@@ -1,8 +1,11 @@
+'use client';
+
 import { motion } from 'motion/react';
-import { TextGenerateEffect } from '../ui/text-generate-effect';
+/*import { TextGenerateEffect } from '../ui/text-generate-effect';*/
 import { FaRegNewspaper } from 'react-icons/fa';
 import { LuConstruction, LuInfo, LuMail } from 'react-icons/lu';
 import { useLenis } from 'lenis/react';
+import { TextGenerateEffect } from '../text-generate-effect';
 
 export default function HeroSection() {
 	return (

@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, Chip } from '@heroui/react';
 import { motion } from 'motion/react';
 
@@ -36,7 +38,7 @@ export default function ProjectSection() {
 				exit={{ opacity: 0 }}
 				transition={{ delay: 1, duration: 1 }}
 				id='projects'
-				className='bg-white rounded-sm border m-7 p-4 flex flex-col gap-10 items-center justify-center pt-10 pb-10'
+				className='max-w-230 bg-white rounded-sm border p-4 flex flex-col gap-10 items-center justify-center pt-10 pb-10'
 			>
 				{' '}
 				<div className='flex flex-col gap-5'>
@@ -45,7 +47,7 @@ export default function ProjectSection() {
 							{`>~== { projects } ==~<`}{' '}
 							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
 						</h2>{' '}
-						<h3 className='px-0 sm:px-8 font-jetbrains max-w-125 opacity-50 text-center text-balance'>
+						<h3 className='px-0 sm:px-8 font-jetbrains max-w-125 text-gray-500 text-center text-balance'>
 							A full collection of both professional projects and stupid ideas.
 						</h3>
 					</div>

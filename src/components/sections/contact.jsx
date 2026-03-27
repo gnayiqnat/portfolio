@@ -1,3 +1,4 @@
+'use client'
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import {
 	Button,
@@ -26,14 +27,15 @@ export default function ContactSection() {
 	const [page, setPage] = useState(1);
 	const [result, setResult] = useState('');
 	const [email, setEmail] = useState('');
-	const isEmailInvalid = email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+	const isEmailInvalid =
+		email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
 		setTimeout(() => {
 			setPage(3);
 		}, 500);
-		const emailApiKey = import.meta.env.VITE_PUBLIC_EMAIL_API_KEY; // Public Web3Forms API key
+		const emailApiKey = process.env.NEXT_PUBLIC_EMAIL_API_KEY; // Public Web3Forms API key
 
 		setResult('Sending....');
 		const formData = new FormData(event.target);
@@ -58,7 +60,7 @@ export default function ContactSection() {
 		<>
 			<motion.div
 				id='contact'
-				className={`m-7 p-4 gap-5 border bg-white border-sm flex flex-col items-center justify-center pt-10 pb-10 `}
+				className={`max-w-230 w-full m-7 p-4 gap-5 border bg-white border-sm flex flex-col items-center justify-center pt-10 pb-10 `}
 			>
 				{' '}
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
@@ -96,7 +98,7 @@ export default function ContactSection() {
 												transition={{ delay: 5, duration: 1 }}
 											>
 												<Button
-													className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+													className='border-gray-600 bg-gray-800 text-gray-100 border-3 rounded-sm text p-4 font-jetbrains font-bold'
 													onClick={() => {
 														reset();
 														setPage(1);
@@ -104,7 +106,7 @@ export default function ContactSection() {
 														setResult('');
 													}}
 												>
-													Not working? Reset the form
+													Not working? Reset the form {'=>'}
 												</Button>
 											</motion.div>
 										</div>
@@ -122,7 +124,7 @@ export default function ContactSection() {
 														<h2 className='text-xl font-jetbrains font-bold'>{`${result}`}</h2>
 													</div>
 													<Button
-														className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+														className='border-gray-600 bg-gray-800 text-gray-100 border-3 rounded-sm text p-4 font-jetbrains font-bold'
 														onClick={() => {
 															reset();
 															setPage(1);
@@ -130,7 +132,7 @@ export default function ContactSection() {
 															setResult('');
 														}}
 													>
-														Return
+														Return {'=>'}
 													</Button>
 												</motion.div>
 											) : (
@@ -148,7 +150,7 @@ export default function ContactSection() {
 														transition={{ delay: 4, duration: 0.5 }}
 													>
 														<Button
-															className='border-black border-3 rounded-sm text p-4 font-jetbrains font-bold'
+															className='border-gray-600 bg-gray-800 text-gray-100 border-3 rounded-sm text p-4 font-jetbrains font-bold'
 															onClick={() => {
 																reset();
 																setPage(1);
@@ -156,7 +158,7 @@ export default function ContactSection() {
 																setResult('');
 															}}
 														>
-															Cancel and return
+															Cancel and return {'=>'}
 														</Button>
 													</motion.div>
 												</motion.div>
@@ -262,7 +264,6 @@ export default function ContactSection() {
 													<TextArea
 														name='message'
 														className='border-3 text-lg font-light font-jetbrains border-gray-50 rounded-xs '
-														isRequired
 														placeholder='Message'
 														rows={5}
 													></TextArea>

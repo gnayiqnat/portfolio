@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import {
 	IoLogoCss3,
@@ -19,7 +21,7 @@ export default function TechstackSection() {
 				exit={{ opacity: 0 }}
 				transition={{ delay: 1, duration: 1 }}
 				id='about'
-				className='m-7 mt-0 mb-0 p-7 md:p-16 lg:p-24 lg:pb-7 lg:pt-10 bg-white rounded-sm border flex flex-col gap-10 items-center justify-center pt-10 pb-10'
+				className='max-w-230 m-7 mt-0 mb-0 p-7 md:p-16 lg:p-24 lg:pb-7 lg:pt-10 bg-white rounded-sm border flex flex-col gap-10 items-center justify-center pt-10 pb-10'
 			>
 				<div className='flex flex-col justify-center items-center gap-3'>
 					<h2 className='text-xl md:text-2xl font-jetbrains font-light'>
@@ -47,7 +49,8 @@ function TechstackCard(n) {
 	return (
 		<>
 			<motion.div className=' grow border-gray-100 bg-gray-50 border-3 p-2 pl-4 pr-4 rounded-xs flex flex-row gap-2.5 justify-center items-center'>
-				<span className='text-xl'>{n.logo}</span> <h5 className='font-jetbrains text-lg'>{n.name}</h5>
+				<span className='text-xl'>{n.logo}</span>{' '}
+				<h5 className='font-jetbrains text-lg'>{n.name}</h5>
 			</motion.div>
 		</>
 	);

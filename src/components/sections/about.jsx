@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'motion/react';
 
 export default function AboutSection() {
@@ -9,7 +11,7 @@ export default function AboutSection() {
 				exit={{ opacity: 0 }}
 				transition={{ delay: 1, duration: 1 }}
 				id='projects'
-				className='bg-white rounded-sm border m-7 p-8 py-10 px-8 md:px-16 lg:px-32 flex flex-col gap-4 items-center justify-center'
+				className='max-w-230 bg-white rounded-sm border m-7 p-8 py-10 px-8 md:px-16 lg:px-32 flex flex-col gap-4 items-center justify-center'
 			>
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
 					{`->~== { about } ==~<-`} {/*{`--->>>~=== { projects } ===~<<<<<---`} */}
