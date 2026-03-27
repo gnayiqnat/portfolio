@@ -9,6 +9,7 @@ import { Button } from '@heroui/react';
 import Page404 from './components/pages/404';
 import TechstackSection from './components/pages/techstack';
 import AboutSection from './components/pages/about';
+import BlogSection from './components/pages/blog';
 
 /*
 
@@ -34,6 +35,7 @@ function Home() {
 			
 			<HeroSection />
 			<div className='max-w-250'>
+				<BlogSection />
 				<ProjectSection />
 				<ContactSection />
 				<TechstackSection />
