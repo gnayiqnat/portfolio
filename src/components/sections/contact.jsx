@@ -1,4 +1,5 @@
 'use client'
+
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import {
 	Button,
@@ -15,6 +16,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { LuInfo, LuMailCheck } from 'react-icons/lu';
+import MotionCardAnimation from '../animations/motion-card';
 
 export default function ContactSection() {
 	const { setValue, reset } = useForm({
@@ -58,10 +60,7 @@ export default function ContactSection() {
 	};
 	return (
 		<>
-			<motion.div
-				id='contact'
-				className={`max-w-230 w-full m-7 p-4 gap-5 border bg-white border-sm flex flex-col items-center justify-center pt-10 pb-10 `}
-			>
+			<MotionCardAnimation>
 				{' '}
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
 					{`>= { get in touch } <=`}{' '}
@@ -307,7 +306,7 @@ export default function ContactSection() {
 						)}
 					</Surface>
 				</div>
-			</motion.div>
+			</MotionCardAnimation>
 		</>
 	);
 }

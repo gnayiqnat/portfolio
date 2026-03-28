@@ -1,10 +1,9 @@
-'use client'
 
 import { Card, Chip } from '@heroui/react';
-import { motion } from 'motion/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
+import MotionCardAnimation from '../animations/motion-card';
 
 const websites = [
 	{
@@ -32,14 +31,7 @@ const websites = [
 export default function ProjectSection() {
 	return (
 		<>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}
-				transition={{ delay: 1, duration: 1 }}
-				id='projects'
-				className='max-w-230 bg-white rounded-sm border p-4 flex flex-col gap-10 items-center justify-center pt-10 pb-10'
-			>
+			<MotionCardAnimation>
 				{' '}
 				<div className='flex flex-col gap-5'>
 					<div className='w-full flex flex-col justify-center items-center gap-3'>
@@ -71,7 +63,7 @@ export default function ProjectSection() {
 						</div>
 					</div>
 				</div>
-			</motion.div>
+			</MotionCardAnimation>
 		</>
 	);
 }
