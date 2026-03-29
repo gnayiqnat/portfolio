@@ -1,3 +1,4 @@
+import Footer from '@/components/sections/footer';
 import { SanityLive } from '@/sanity/lib/live';
 
 export default function BlogLayout({ children }) {
@@ -5,6 +6,7 @@ export default function BlogLayout({ children }) {
     <>
       {children}
 			<SanityLive />
+			<Footer />	
 		</>
 	);
 }
