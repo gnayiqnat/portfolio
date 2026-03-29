@@ -9,8 +9,13 @@ export default function BlogCard(n) {
 	return (
 		<HoverScaleAnimation>
 			<Link href={`/blog/${n.slug}`}>
-				<Card className='cursor-pointer border border-gray-50 w-full items-stretch sm:flex-row rounded-xl'>
-					<div className='relative h-35 w-full shrink-0 overflow-hidden rounded-md sm:h-30 sm:w-30 bg-gray-100'>
+				<Card
+					id='blog-card'
+					className={`cursor-pointer border border-gray-50 w-full items-stretch ${n.isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}
+				>
+					<div
+						className={`relative h-35 w-full shrink-0 overflow-hidden rounded-md ${n.isFeatured === true ? 'h-45' : 'lg:h-30 lg:w-30'} bg-gray-100`}
+					>
 						{n.imgSrc ? (
 							<Image
 								className='pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none'
@@ -30,15 +35,16 @@ export default function BlogCard(n) {
 							<h6 className='font-jetbrains text-gray-400'>
 								{n.publishedAt && n.publishedAt}
 							</h6>
-							<Card.Title className='text-xl md:text-2xl font-jetbrains text-gray-700 text-balance'>
+							<Card.Title className='text-xl md:text-2xl font-jetbrains text-gray-700 text-balance break-all'>
 								{n.title}
 							</Card.Title>
 						</Card.Header>
 						<Card.Footer className='flex flex-row gap-3'>
 							<div className='flex flex-row gap-2'>
-								{n.categories && n.categories.map((category) => (
-									<TagChip key={category.title} text={category.title} />
-								))}
+								{n.categories &&
+									n.categories.map((category) => (
+										<TagChip key={category.title} text={category.title} />
+									))}
 							</div>
 							<Separator orientation='vertical' />
 							<div className='flex flex-row gap-1.5 justify-center items-center text-gray-400'>
