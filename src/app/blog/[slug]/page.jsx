@@ -3,7 +3,7 @@ import { PortableText } from 'next-sanity';
 import Link from 'next/link';
 
 // 1. GROQ Query to fetch a single post by its slug
-const POST_QUERY = `*[_type == "post" && defined(slug.current)][0]{
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
   publishedAt,
@@ -11,9 +11,11 @@ const POST_QUERY = `*[_type == "post" && defined(slug.current)][0]{
 }`;
 
 export default async function PostPage({ params }) {
+	const { slug } = await params;
 
 	const { data: post } = await sanityFetch({
 		query: POST_QUERY,
+		params: { slug },
 		perspective: 'published',
 		stega: false,
 	});
