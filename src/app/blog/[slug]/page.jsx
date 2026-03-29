@@ -54,13 +54,13 @@ export default async function PostPage({ params }) {
 			<MotionOpacityAnimation duration='0.5' delay='0'>
 				<main className='container mx-auto gap-6 p-8 sm:p-12 max-w-7xl'>
 					{' '}
-					{/*<Link
+					<Link
 					className='text-base text-gray-200 bg-gray-800 py-2.5 px-5 border-3 border-gray-400 rounded-md'
 					href='/blog'
 				>
 					{'<= Return to Blog Feed'}
 				</Link>
-				 */}
+				 
 					<div className='flex flex-col gap-4'>
 						<div className='py-10 flex flex-col gap-3'>
 							<div className='flex flex-row gap-2'>
