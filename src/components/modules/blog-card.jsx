@@ -59,7 +59,7 @@ export default function BlogCard(n) {
 	);
 }
 
-function TagChip(n) {
+export function TagChip(n) {
 	return (
 		<>
 			<Chip

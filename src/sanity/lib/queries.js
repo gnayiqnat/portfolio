@@ -18,7 +18,11 @@ _type == "post" && slug.current == $slug
   title,
   body,
   publishedAt,
-  mainImage
+  mainImage,
+  categories[]-> {
+    title,
+    "slug": slug.current
+  },
 }`;
 
 // All Slugs
