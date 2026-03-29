@@ -1,4 +1,4 @@
-import { sanityFetch } from '@/sanity/lib/live';
+import { sanityFetch, SanityLive } from '@/sanity/lib/live';
 import Link from 'next/link';
 
 const POSTS_QUERY = `*[
@@ -24,6 +24,7 @@ export default async function IndexPage() {
 					</li>
 				))}
 			</ul>
+			<SanityLive />
 		</main>
 	);
 }
