@@ -1,4 +1,4 @@
-import { sanityFetch, SanityLive } from '@/sanity/lib/live';
+import { sanityFetch } from '@/sanity/lib/live';
 import Link from 'next/link';
 
 const POSTS_QUERY = `*[
@@ -6,7 +6,6 @@ const POSTS_QUERY = `*[
   && defined(slug.current)
 ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
 
-const options = { next: { revalidate: 30 } };
 
 export default async function IndexPage() {
 	const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
@@ -24,7 +23,6 @@ export default async function IndexPage() {
 					</li>
 				))}
 			</ul>
-			<SanityLive />
 		</main>
 	);
 }
