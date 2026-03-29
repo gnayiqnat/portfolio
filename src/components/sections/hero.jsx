@@ -1,11 +1,10 @@
 'use client';
 
 import { motion } from 'motion/react';
-/*import { TextGenerateEffect } from '../ui/text-generate-effect';*/
 import { FaRegNewspaper } from 'react-icons/fa';
 import { LuConstruction, LuInfo, LuMail } from 'react-icons/lu';
 import { useLenis } from 'lenis/react';
-import { TextGenerateEffect } from '../text-generate-effect';
+// import { TextGenerateEffect } from '../text-generate-effect';
 import Link from 'next/link';
 
 export default function HeroSection() {
@@ -13,34 +12,26 @@ export default function HeroSection() {
 		<motion.div
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
-			transition={{ delay: 0.5, duration: 1 }}
 			className='max-w-5xl w-full flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 p-8 lg:p-24 items-center justify-center md:justify-between'
 		>
 			<motion.div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div className='mt-4 mb-2 md:m-0 order-2 md:order-first justify-center md:justify-end w-full  flex flex-col flex-nowrap'>
-					<TextGenerateEffect words='// Hello, I am Qi Yang.' />
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 3, duration: 0.75 }}
-					>
+					<h1 className=' dark:text-white text-gray-700 font-tinos font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
+						// Hello, I am Qi Yang.
+					</h1>
+					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 						<h1 className='text-2xl lg:text-3xl font-jetbrains bg-gray-800 text-gray-100 w-fit pr-2 pl-2'>
 							UX & Full-stack Web Developer.
 						</h1>
 					</motion.div>
 				</div>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 4.5, duration: 1 }}
-				>
+				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 					<HeroCard text='blog' type='normal' imageIndex={0} />
 				</motion.div>
 			</motion.div>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ delay: 4.5, duration: 1 }}
 				className='flex flex-col w-full md:grid md:grid-rows-2 gap-4 flex-nowrap'
 			>
 				<motion.div className='grid grid-cols-2 gap-4'>
