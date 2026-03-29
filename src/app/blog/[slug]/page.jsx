@@ -1,3 +1,4 @@
+import { client } from '@/sanity/lib/client';
 import { sanityFetch } from '@/sanity/lib/live';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
@@ -10,6 +11,15 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   mainImage
 }`;
 
+export async function generateStaticParams() {
+	const SLUG_QUERY = `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`
+
+	const slugs = await client.fetch(SLUG_QUERY);
+
+	return slugs.map((post) => ({
+		slug: post.slug,
+	}));
+}
 export default async function PostPage({ params }) {
 	const { slug } = await params;
 
