@@ -1,23 +1,16 @@
 import { client } from '@/sanity/lib/client';
 import { sanityFetch } from '@/sanity/lib/live';
+import { POST_QUERY, SLUG_QUERY } from '@/sanity/lib/queries';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
 
 // Queries
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
-  title,
-  body,
-  publishedAt,
-  mainImage
-}`;
-const SLUG_QUERY = `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`;
 
 // Revalidate after 60 seconds
 export const revalidate = 60;
 
-// 
+//
 export async function generateStaticParams() {
-
 	const slugs = await client.fetch(SLUG_QUERY);
 
 	return slugs.map((post) => ({
