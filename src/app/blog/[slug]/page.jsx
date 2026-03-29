@@ -3,16 +3,20 @@ import { sanityFetch } from '@/sanity/lib/live';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
 
-// 1. GROQ Query to fetch a single post by its slug
+// Queries
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
   publishedAt,
   mainImage
 }`;
+const SLUG_QUERY = `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`;
 
+// Revalidate after 60 seconds
+export const revalidate = 60;
+
+// 
 export async function generateStaticParams() {
-	const SLUG_QUERY = `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`
 
 	const slugs = await client.fetch(SLUG_QUERY);
 
@@ -20,6 +24,8 @@ export async function generateStaticParams() {
 		slug: post.slug,
 	}));
 }
+
+//
 export default async function PostPage({ params }) {
 	const { slug } = await params;
 
