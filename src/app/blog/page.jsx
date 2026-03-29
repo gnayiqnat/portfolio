@@ -10,7 +10,7 @@ export default async function IndexPage() {
 	});
 
 	return (
-		<main className='mt-30 container mx-auto min-h-screen max-w-5xl p-8 sm:px-32 md:px-48 lg:px-20'>
+		<main className='mt-5 container mx-auto min-h-screen max-w-5xl p-8 sm:px-32 md:px-48 lg:px-20'>
 			<div className=''>
 				<h1 className='text-4xl font-bold mb-8'>Posts</h1>{' '}
 				<div className='h-16'>

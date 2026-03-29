@@ -1,4 +1,4 @@
-import { JetBrains_Mono, Tinos } from 'next/font/google';
+import { JetBrains_Mono, Libre_Barcode_128_Text, Tinos } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 
@@ -8,6 +8,8 @@ const jetbrains = JetBrains_Mono({
 });
 
 const tinos = Tinos({ variable: '--font-tinos', subsets: ['latin'], weight: '400' });
+
+const libreBarcode = Libre_Barcode_128_Text({variable: '--font-barcode', weight: '400'})
 
 export const metadata = {
 	title: 'tqy',
@@ -24,6 +26,7 @@ export default function RootLayout({ children }) {
 				jetbrains.variable,
 				'font-sans',
 				tinos.variable,
+				libreBarcode.variable
 			)}
 		>
 			<body className='min-h-full flex flex-col items-center'>{children}</body>
