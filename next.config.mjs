@@ -4,6 +4,9 @@ const nextConfig = {
 	env: {
 		BASE_URL: process.env.BASE_URL,
 	},
+	images: {
+		remotePatterns: [new URL('https://cdn.sanity.io/**')],
+	},
 };
 
 export default nextConfig;
