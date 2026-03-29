@@ -1,7 +1,9 @@
 import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
 import { sanityFetch } from '@/sanity/lib/live';
 import { POST_QUERY, SLUG_QUERY } from '@/sanity/lib/queries';
 import { PortableText } from 'next-sanity';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // Queries
@@ -42,6 +44,14 @@ export default async function PostPage({ params }) {
 			<h1 className='text-4xl font-bold text-balance'>{post.title}</h1>
 			<hr />
 			<h2>{post.publishedAt}</h2>
+			{post.mainImage && (
+				<Image
+					src={urlFor(post.mainImage.asset._ref).url()}
+					alt={post.mainImage.alt}
+					width={400}
+					height={300}
+				/>
+			)}
 			<PortableText value={post.body} />
 			<Link href='/blog'>&larr; Return to index</Link>
 		</main>

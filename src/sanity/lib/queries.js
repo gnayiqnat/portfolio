@@ -1,16 +1,15 @@
-
 // QUERIES
-
 
 // All Posts
 export const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)
-[0...12]{
-_id, title, slug, publishedAt
+]|order(publishedAt asc)[0...$limit]{
+_id, title, slug, publishedAt, mainImage, categories[]-> {
+    title,
+    "slug": slug.current
+  }
 }`;
-
 
 // Single Post
 export const POST_QUERY = `*[
@@ -21,7 +20,6 @@ _type == "post" && slug.current == $slug
   publishedAt,
   mainImage
 }`;
-
 
 // All Slugs
 export const SLUG_QUERY = `*[
