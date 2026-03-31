@@ -5,7 +5,14 @@ const nextConfig = {
 		BASE_URL: process.env.BASE_URL,
 	},
 	images: {
-		remotePatterns: [new URL('https://cdn.sanity.io/**')],
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'cdn.sanity.io',
+				port: '',
+				pathname: '/**',
+			},
+		],
 	},
 };
 
