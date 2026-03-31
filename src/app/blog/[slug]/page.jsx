@@ -55,6 +55,23 @@ export default async function PostPage({ params }) {
 				<ReactLenis root />
 				<MotionOpacityAnimation duration='0.5' delay='0'>
 					<main className='container mx-auto gap-6 p-8 sm:p-12 max-w-7xl'>
+						{' '}
+						<div className='pb-3 text-lg text-gray-400'>
+							<Link className='hover:underline' href='/'>
+								HOME
+							</Link>{' '}
+							{'> '}
+							<Link className='hover:underline' href='/blog'>
+								BLOG
+							</Link>{' '}
+							{'> '}
+							<Link
+								className='hover:underline uppercase text-gray-700'
+								href='/'
+							>
+								{slug}
+							</Link>
+						</div>
 						<div className='flex flex-col gap-4'>
 							<div className='py-10 flex flex-col gap-3'>
 								<div className='flex flex-row gap-2'>
