@@ -60,7 +60,7 @@ export default function ContactSection() {
 	};
 	return (
 		<>
-			<MotionCardAnimation>
+			<MotionCardAnimation id='contact'>
 				{' '}
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
 					{`>= { get in touch } <=`}{' '}

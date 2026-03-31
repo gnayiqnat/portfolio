@@ -31,7 +31,7 @@ const websites = [
 export default function ProjectSection() {
 	return (
 		<>
-			<MotionCardAnimation>
+			<MotionCardAnimation id='projects'>
 				{' '}
 				<div className='flex flex-col gap-5'>
 					<div className='w-full flex flex-col justify-center items-center gap-3'>

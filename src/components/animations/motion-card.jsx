@@ -2,9 +2,10 @@
 
 import { motion } from 'motion/react';
 
-export default function MotionCardAnimation({ children }) {
+export default function MotionCardAnimation({ children, id = '' }) {
 	return (
 		<motion.div
+			id={id}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ delay: 1, duration: 1 }}
