@@ -1,3 +1,4 @@
+import NavBar from '@/components/modules/nav-bar';
 import AboutSection from '@/components/sections/about';
 import BlogSection from '@/components/sections/blog';
 import ContactSection from '@/components/sections/contact';
@@ -13,6 +14,7 @@ export default function Home() {
 		<>
 			{' '}
 			<ReactLenis root options={{ autoRaf: true }} />
+			<NavBar />
 			<div className='w-full flex flex-col justify-center items-center gap-10 sm:gap-15'>
 				<HeroSection />
 				<BlogSection />

@@ -12,7 +12,7 @@ export default function HeroSection() {
 		<motion.div
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
-			className='max-w-5xl w-full flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 p-8 lg:p-24 items-center justify-center md:justify-between'
+			className='pt-22 max-w-5xl w-full flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 p-8 lg:p-24 items-center justify-center md:justify-between'
 		>
 			<motion.div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div className='mt-4 mb-2 md:m-0 order-2 md:order-first justify-center md:justify-end w-full  flex flex-col flex-nowrap'>
