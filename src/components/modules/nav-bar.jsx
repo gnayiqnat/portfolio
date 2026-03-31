@@ -1,7 +1,12 @@
+'use client'
+
 import Link from 'next/link';
 import ScrollProgressBar from '../animations/scroll-progress-bar';
+import { usePathname } from 'next/navigation';
 
 export default function NavBar() {
+	const pathname = usePathname()
+
 	return (
 		<>
 			<div className='fixed w-full flex flex-col  z-99'>
@@ -10,7 +15,7 @@ export default function NavBar() {
 						<span className=' font-barcode text-4xl text-gray-700'>TAN QI YANG</span>
 					</Link>
 				</div>
-				<ScrollProgressBar />
+				{pathname.includes('/blog/') && <ScrollProgressBar />}
 			</div>
 		</>
 	);
