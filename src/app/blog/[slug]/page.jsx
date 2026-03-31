@@ -88,9 +88,9 @@ export default async function PostPage({ params }) {
 								BLOG
 							</Link>{' '}
 							{'> '}
-							<Link className='hover:underline uppercase text-gray-700' href='/'>
+							<span className='hover:underline uppercase cursor-pointer text-gray-700 break-all'>
 								{slug}
-							</Link>
+							</span>
 						</div>
 						<div className='flex flex-col gap-4'>
 							<div className='py-10 flex flex-col gap-3'>
@@ -106,7 +106,7 @@ export default async function PostPage({ params }) {
 											</Chip>
 										))}
 								</div>
-								<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-balance'>
+								<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-balance break-all'>
 									{post.title}
 								</h1>
 								<div className='flex flex-col gap-3'>
