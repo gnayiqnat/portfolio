@@ -25,6 +25,29 @@ export async function generateStaticParams() {
 	}));
 }
 
+// PortableText Components
+const components = {
+	block: {
+		normal: ({ children }) => <p className='text-lg text-gray-900'>{children}</p>,
+	},
+	types: {
+		image: ({ value }) => {
+			if (!value?.asset?._ref) return null;
+			return (
+				<div className='flex flex-col gap-2'>
+					<Image
+						src={urlFor(value.asset._ref).width(800).auto('format').url()}
+						alt={value.alt}
+						width={800}
+						height={450}
+						className='rounded-lg'
+					/>
+					<p className='text-gray-500 ml-2'>{value.alt}</p>
+				</div>
+			);
+		},
+	},
+};
 //
 export default async function PostPage({ params }) {
 	const { slug } = await params;
@@ -65,10 +88,7 @@ export default async function PostPage({ params }) {
 								BLOG
 							</Link>{' '}
 							{'> '}
-							<Link
-								className='hover:underline uppercase text-gray-700'
-								href='/'
-							>
+							<Link className='hover:underline uppercase text-gray-700' href='/'>
 								{slug}
 							</Link>
 						</div>
@@ -109,7 +129,7 @@ export default async function PostPage({ params }) {
 										<p className='text-gray-500 ml-2'>{post.mainImage.alt}</p>
 									</div>
 								)}
-								<PortableText className='text-lg' value={post.body} />
+								<PortableText value={post.body} components={components} />
 							</div>
 							<div className='flex flex-col items-center px-2 py-10 gap-3'>
 								<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
