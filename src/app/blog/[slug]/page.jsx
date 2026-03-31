@@ -77,7 +77,7 @@ export default async function PostPage({ params }) {
 			<ScrollToTop>
 				<ReactLenis root />
 				<MotionOpacityAnimation duration='0.5' delay='0'>
-					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-25 max-w-7xl'>
+					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 						{' '}
 						<div className='pb-3 text-lg text-gray-400'>
 							<Link className='hover:underline' href='/'>
