@@ -16,7 +16,7 @@ export default function HeroSection() {
 		>
 			<motion.div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div className='mt-4 mb-2 md:m-0 order-2 md:order-first justify-center md:justify-end w-full  flex flex-col flex-nowrap'>
-					<h1 className='text-foreground font-tinos font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
+					<h1 className='text-foreground/80 font-tinos font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
 						// Hello, I am Qi Yang.
 					</h1>
 					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
