@@ -24,11 +24,6 @@ export default function Home() {
 				<AboutSection />
 				<Footer />
 			</div>
-			{/* --- analytics --- */}
-			<Script
-				src='https://cloud.umami.is/script.js'
-				data-website-id='82499b45-9a5c-4e62-9e94-6df3c5106f92'
-			/>
 		</>
 	);
 }

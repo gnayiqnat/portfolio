@@ -29,7 +29,15 @@ export default function RootLayout({ children }) {
 				libreBarcode.variable
 			)}
 		>
-			<body className='min-h-full flex flex-col items-center'>{children}</body>
+			<body className='min-h-full flex flex-col items-center'>
+				<ThemeProvider attribute='data-theme' defaultTheme='system' enableSystem>
+					{children}
+				</ThemeProvider>{' '}
+				<Script
+					src='https://cloud.umami.is/script.js'
+					data-website-id='82499b45-9a5c-4e62-9e94-6df3c5106f92'
+				/>
+			</body>
 		</html>
 	);
 }
