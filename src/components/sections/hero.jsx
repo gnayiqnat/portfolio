@@ -134,7 +134,7 @@ function HeroCard(n) {
 						transition: { duration: 0.1 },
 					}}
 					onClick={() => {
-						lenis?.scrollTo(`#${n.text}`);
+						lenis?.scrollTo(`#${n.text}`, {offset: -80});
 					}}
 				>
 					{n.type == 'small' ? (
