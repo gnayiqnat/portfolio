@@ -7,6 +7,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { ThemeProvider } from '@wrksz/themes/next';
+import NavBar from '@/components/modules/nav-bar';
 
 const jetbrains = JetBrains_Mono({
 	variable: '--font-jetbrains-mono',
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
 		>
 			<body className='min-h-full flex flex-col items-center'>
 				<ThemeProvider>
+					<NavBar />
 					{children}
 				</ThemeProvider>{' '}
 				<Script

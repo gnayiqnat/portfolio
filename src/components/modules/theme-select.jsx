@@ -1,11 +1,21 @@
+'use client';
+
 import { Tabs } from '@heroui/react';
 import { useTheme } from '@wrksz/themes/client';
+import { useEffect, useState } from 'react';
 import { LuMoonStar, LuSunMedium } from 'react-icons/lu';
 
 export default function ThemeSelector() {
 	const { resolvedTheme, setTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
 
-	if (!resolvedTheme) return null;
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return <div className='w-[99px] h-[44px]' />;
+	}
 	return (
 		<Tabs
 			className='w-fit'
