@@ -7,7 +7,6 @@ import HeroSection from '@/components/sections/hero.jsx';
 import ProjectSection from '@/components/sections/projects';
 import TechstackSection from '@/components/sections/techstack';
 import { ReactLenis } from 'lenis/react';
-import Script from 'next/script';
 
 export default function Home() {
 	return (

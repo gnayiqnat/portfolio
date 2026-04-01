@@ -17,12 +17,12 @@ export default async function IndexPage() {
 			<ReactLenis root />
 			<MotionOpacityAnimation duration='0.5' delay='0'>
 				<main className='pt-22 mt-5 container mx-auto min-h-screen max-w-6xl flex flex-col gap-7 p-8 sm:px-32 md:px-48 lg:px-20'>
-					<div className='pb-3 text-lg text-gray-400'>
+					<div className='pb-3 text-lg text-foreground/40'>
 						<Link className='hover:underline' href='/'>
 							HOME
 						</Link>{' '}
 						{'> '}
-						<Link className='hover:underline text-gray-700' href='/blog'>
+						<Link className='hover:underline text-foreground/80' href='/blog'>
 							BLOG
 						</Link>
 					</div>

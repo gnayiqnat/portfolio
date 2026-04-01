@@ -15,7 +15,7 @@ export default function TechstackSection() {
 		<>
 			<MotionCardAnimation>
 				<div className='flex flex-col justify-center items-center gap-3'>
-					<h2 className='text-xl md:text-2xl font-jetbrains font-light'>
+					<h2 className='text-xl md:text-2xl font-jetbrains font-light text-foreground'>
 						{`==> { techstack } <==`}{' '}
 					</h2>
 					<h3 className='px-0 sm:px-8 font-jetbrains max-w-150 opacity-50 text-center text-balance'>
@@ -39,7 +39,7 @@ export default function TechstackSection() {
 function TechstackCard(n) {
 	return (
 		<>
-			<div className=' grow border-gray-100 bg-gray-50 border-3 p-2 pl-4 pr-4 rounded-xs flex flex-row gap-2.5 justify-center items-center'>
+			<div className=' grow border-foreground/10 text-foreground bg-background border-3 p-2 pl-4 pr-4 rounded-xs flex flex-row gap-2.5 justify-center items-center'>
 				<span className='text-xl'>{n.logo}</span>{' '}
 				<h5 className='font-jetbrains text-lg'>{n.name}</h5>
 			</div>

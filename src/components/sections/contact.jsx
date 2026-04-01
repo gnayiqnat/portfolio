@@ -62,7 +62,7 @@ export default function ContactSection() {
 		<>
 			<MotionCardAnimation id='contact'>
 				{' '}
-				<h2 className={` text-xl md:text-2xl font-jetbrains font-light `}>
+				<h2 className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}>
 					{`>= { get in touch } <=`}{' '}
 				</h2>
 				{page === 1 && (
@@ -208,7 +208,7 @@ export default function ContactSection() {
 												<div className='w-full flex flex-col sm:flex-row gap-3 sm:gap-1'>
 													<Input
 														fullWidth
-														className=' w-full border-3 border-gray-50 rounded-xs text-lg'
+														className=' w-full border-3 border-foreground/8 rounded-xs text-lg'
 														placeholder='john@example.com'
 														value={email}
 													/>
@@ -218,7 +218,7 @@ export default function ContactSection() {
 																onClick={() => {
 																	setPage(2);
 																}}
-																className='sm:h-full w-full sm:w-fit border-gray-600 rounded-xs border-3 bg-gray-900 text-gray-100 sm:ml-2'
+																className='sm:h-full w-full sm:w-fit border-gray-600 dark:border-gray-400 rounded-xs border-3 bg-foreground/90 text-background sm:ml-2'
 															>
 																<span className='hidden sm:inline text-lg font-jetbrains'>
 																	{'=>'}
@@ -252,7 +252,7 @@ export default function ContactSection() {
 													<Input
 														fullWidth
 														name='name'
-														className='font-jetbrains font-light border-3 text-lg border-gray-50 rounded-xs '
+														className='font-jetbrains font-light border-3 text-lg border-foreground/8  rounded-xs '
 														placeholder='What is your name?'
 													/>
 													<FieldError />
@@ -262,7 +262,7 @@ export default function ContactSection() {
 													<Label className='text-lg font-jetbrains'>Message</Label>
 													<TextArea
 														name='message'
-														className='border-3 text-lg font-light font-jetbrains border-gray-50 rounded-xs '
+														className='border-3 text-lg font-light font-jetbrains border-foreground/8  rounded-xs '
 														placeholder='Message'
 														rows={5}
 													></TextArea>
@@ -283,7 +283,7 @@ export default function ContactSection() {
 												<div className='flex flex-col sm:flex-row gap-1 flex-nowrap'>
 													<Button
 														fullWidth
-														className='font-jetbrains w-full sm:w-fit border-gray-400 text-gray-500 rounded-xs border-2  text-lg sm:p-5'
+														className='font-jetbrains w-full sm:w-fit border-gray-400 text-foreground/80 rounded-xs border-2  text-lg sm:p-5'
 														variant='outline'
 														onClick={() => {
 															setPage(1);
@@ -293,7 +293,7 @@ export default function ContactSection() {
 													</Button>
 													<Button
 														type='submit'
-														className='font-jetbrains w-full sm:w-fit order-first sm:order-last border-black rounded-xs border-2 bg-gray-900 text-gray-100 text-lg p-5'
+														className='font-jetbrains w-full sm:w-fit order-first sm:order-last border-gray-400 rounded-xs border-2 bg-foreground text-background text-lg p-5'
 													>
 														Submit
 													</Button>

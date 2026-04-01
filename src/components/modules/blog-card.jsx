@@ -11,10 +11,10 @@ export default function BlogCard(n) {
 			<Link href={`/blog/${n.slug}`}>
 				<Card
 					id='blog-card'
-					className={`cursor-pointer border border-gray-50 w-full items-stretch ${n.isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}
+					className={`cursor-pointer dark:bg-foreground/5 border border-background dark:border-foreground/10 w-full items-stretch ${n.isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}
 				>
 					<div
-						className={`relative h-35 w-full shrink-0 overflow-hidden rounded-md ${n.isFeatured === true ? 'h-45' : 'lg:h-30 lg:w-30'} bg-gray-100`}
+						className={`relative h-35 w-full shrink-0 overflow-hidden rounded-md ${n.isFeatured === true ? 'h-45' : 'lg:h-30 lg:w-30'}`}
 					>
 						{n.imgSrc ? (
 							<Image
@@ -24,7 +24,7 @@ export default function BlogCard(n) {
 								fill={true}
 							/>
 						) : (
-							<div className='h-full w-full flex justify-center items-center'>
+							<div className='h-full w-full flex justify-center items-center bg-background dark:bg-foreground/4'>
 								<h5 className='text-gray-400'>NO IMAGE</h5>
 							</div>
 						)}
@@ -32,10 +32,10 @@ export default function BlogCard(n) {
 					<div className=' flex flex-col justify-around gap-2'>
 						<Card.Header className='flex flex-col gap-0.75'>
 							{' '}
-							<h6 className='font-jetbrains text-gray-400'>
+							<h6 className='ml-1 font-jetbrains text-foreground/45 dark:text-foreground/35'>
 								{n.publishedAt && n.publishedAt}
 							</h6>
-							<Card.Title className='text-xl md:text-2xl font-jetbrains text-gray-700 text-balance break-all'>
+							<Card.Title className='text-xl md:text-2xl font-jetbrains text-foreground/85 text-balance break-all'>
 								{n.title}
 							</Card.Title>
 						</Card.Header>
@@ -46,8 +46,8 @@ export default function BlogCard(n) {
 										<TagChip key={category.title} text={category.title} />
 									))}
 							</div>
-							<Separator orientation='vertical' />
-							<div className='flex flex-row gap-1.5 justify-center items-center text-gray-400'>
+							<Separator orientation='vertical' className='bg-foreground/15' />
+							<div className='flex flex-row gap-1.5 justify-center items-center text-foreground/40'>
 								<LuMessageSquare size={18} className='' />
 								<h6 className='font-jetbrains'>0</h6>
 							</div>{' '}
@@ -64,7 +64,7 @@ export function TagChip(n) {
 		<>
 			<Chip
 				size='lg'
-				className='px-1.5 rounded-xs font-jetbrains bg-gray-100 text-gray-600 '
+				className='px-1.5 rounded-xs font-jetbrains bg-background dark:bg-background/70  text-foreground/60 '
 			>
 				{n.text}
 			</Chip>

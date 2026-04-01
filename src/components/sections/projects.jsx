@@ -35,7 +35,9 @@ export default function ProjectSection() {
 				{' '}
 				<div className='flex flex-col gap-5'>
 					<div className='w-full flex flex-col justify-center items-center gap-3'>
-						<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
+						<h2
+							className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
+						>
 							{`>~== { projects } ==~<`}{' '}
 							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
 						</h2>{' '}
@@ -73,7 +75,7 @@ function WebCard(n) {
 	return (
 		<>
 			<Card
-				className={`border-gray-50 border-5  w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
+				className={` border-2 w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
 			>
 				<Card.Header className='flex gap-2.5'>
 					<img
@@ -84,7 +86,7 @@ function WebCard(n) {
 					/>
 					<div className='flex flex-row gap-2 items-center'>
 						<Card.Title
-							className={`font-tinos font-bold text-2xl ${n.type == 'dark' && 'scheme-dark text-white'}`}
+							className={`font-tinos font-bold text-2xl ${n.type == 'dark' && ' text-white'}`}
 						>
 							{properties.name}
 						</Card.Title>
@@ -98,7 +100,7 @@ function WebCard(n) {
 						</Card.Description>
 					</div>
 					<Card.Content
-						className={`font-tinos text-lg leading-6 ${n.type == 'dark' && 'text-white opacity-70'}`}
+						className={`font-tinos text-lg leading-6 text-foreground/80 ${n.type == 'dark' && 'text-gray-300'}`}
 					>
 						{properties.description}
 					</Card.Content>

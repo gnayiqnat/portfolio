@@ -16,12 +16,12 @@ export default function HeroSection() {
 		>
 			<motion.div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 				<div className='mt-4 mb-2 md:m-0 order-2 md:order-first justify-center md:justify-end w-full  flex flex-col flex-nowrap'>
-					<h1 className=' dark:text-white text-gray-700 font-tinos font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
+					<h1 className='text-foreground font-tinos font-bold text-2xl lg:text-3xl leading-snug tracking-wide'>
 						// Hello, I am Qi Yang.
 					</h1>
 					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-						<h1 className='text-2xl lg:text-3xl font-jetbrains bg-gray-800 text-gray-100 w-fit pr-2 pl-2'>
-							UX & Full-stack Web Developer.
+						<h1 className='text-2xl lg:text-3xl font-jetbrains bg-foreground/80 text-background text-balance w-fit pr-2 pl-2'>
+							A Full-stack Web Developer.
 						</h1>
 					</motion.div>
 				</div>
@@ -61,7 +61,7 @@ function HeroCard(n) {
 				<Link href='/blog'>
 					<motion.div
 						id={n.imageIndex}
-						className={`select-none min-h-32 font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-sm text-gray-700 border-3 bg-gray-100 border-gray-300 cursor-pointer`}
+						className={`select-none min-h-32 font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-sm text-foreground/80 bg-foreground/5 border-foreground/10 border-3 cursor-pointer`}
 						initial={{
 							borderBottomWidth: 7,
 							marginTop: 0,
@@ -106,7 +106,7 @@ function HeroCard(n) {
 									</div>
 								</div>
 								<div>
-									<h3 className='text-xl lg:text-2xl font-jetbrains	'>
+									<h3 className='text-xl lg:text-2xl font-jetbrains	text-foreground/80'>
 										{'- { '}
 										{n.text}
 										{' } -'}
@@ -119,7 +119,7 @@ function HeroCard(n) {
 			) : (
 				<motion.div
 					id={n.imageIndex}
-					className={`select-none min-h-32 font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-sm text-gray-700 border-3 bg-gray-100 border-gray-300 cursor-pointer`}
+					className={`select-none min-h-32 font-bold flex ${n.type == 'small' ? 'flex-col' : 'flex-row'} justify-center items-center flex-nowrap gap-5 rounded-sm  text-foreground/80 bg-foreground/5 border-3 border-foreground/10 cursor-pointer`}
 					initial={{
 						borderBottomWidth: 7,
 						marginTop: 0,
@@ -134,7 +134,7 @@ function HeroCard(n) {
 						transition: { duration: 0.1 },
 					}}
 					onClick={() => {
-						lenis?.scrollTo(`#${n.text}`, {offset: -80});
+						lenis?.scrollTo(`#${n.text}`, { offset: -80 });
 					}}
 				>
 					{n.type == 'small' ? (

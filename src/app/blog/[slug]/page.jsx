@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 // PortableText Components
 const components = {
 	block: {
-		normal: ({ children }) => <p className='text-lg text-gray-900'>{children}</p>,
+		normal: ({ children }) => <p className='text-lg text-foreground/93'>{children}</p>,
 	},
 	types: {
 		image: ({ value }) => {
@@ -79,7 +79,7 @@ export default async function PostPage({ params }) {
 				<MotionOpacityAnimation duration='0.5' delay='0'>
 					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 						{' '}
-						<div className='pb-3 text-lg text-gray-400'>
+						<div className='pb-3 text-lg text-foreground/40'>
 							<Link className='hover:underline' href='/'>
 								HOME
 							</Link>{' '}
@@ -88,7 +88,7 @@ export default async function PostPage({ params }) {
 								BLOG
 							</Link>{' '}
 							{'> '}
-							<span className='hover:underline uppercase cursor-pointer text-gray-700 break-all'>
+							<span className='hover:underline uppercase cursor-pointer text-foreground/80 break-all'>
 								{slug}
 							</span>
 						</div>
@@ -100,16 +100,16 @@ export default async function PostPage({ params }) {
 											<Chip
 												key={index}
 												size='lg'
-												className='text-base px-1.5 rounded-xs font-jetbrains bg-gray-100 text-gray-500 border-none border-gray-100 uppercase'
+												className='text-base px-1.5 rounded-xs font-jetbrains bg-gray-100 dark:bg-background/70  text-foreground/60 dark:border dark:border-gray-700 uppercase'
 											>
 												{category.title}
 											</Chip>
 										))}
 								</div>
-								<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-balance break-all'>
+								<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-balance break-all text-foreground/95'>
 									{post.title}
 								</h1>
-								<div className='flex flex-col gap-3'>
+								<div className='flex flex-col gap-3 text-foreground/45'>
 									<h2>{post.publishedAt}</h2>
 								</div>
 							</div>
@@ -132,7 +132,7 @@ export default async function PostPage({ params }) {
 								<PortableText value={post.body} components={components} />
 							</div>
 							<div className='flex flex-col items-center px-2 py-10 gap-3'>
-								<h2 className={` text-xl md:text-2xl font-jetbrains font-light`}>
+								<h2 className={` text-xl md:text-2xl font-jetbrains font-light text-foreground/60`}>
 									{`-= { latest } =-`}
 								</h2>
 								<ul className='p-3 flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-col gap-5 lg:gap-y-2'>

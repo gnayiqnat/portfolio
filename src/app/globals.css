@@ -4,26 +4,29 @@
 @import 'shadcn/tailwind.css';
 
 @theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
 	--font-jetbrains: var(--font-jetbrains-mono);
 	--font-tinos: var(--font-tinos);
 	--font-barcode: var(--font-barcode);
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}*/
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-	--background: oklch(0.9875 0 0);
-	--foreground: oklch(0.145 0 0);
-}
 body {
 	background-color: var(--background);
 	font-family: var(--font-jetbrains-mono);
 }
+:root {
+	--background: oklch(0.9875 0 0);
+	--foreground: oklch(16.68% 0.06435 267.09); /* gray-950 */
+}
+
+:root.dark {
+	--background: #121213;
+	--foreground: #e4e8ef;
+}
+
 ::selection {
 	color: oklch(97% 0 0);
 	background-color: oklch(14.5% 0 0);
