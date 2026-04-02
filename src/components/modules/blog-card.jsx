@@ -6,24 +6,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { imageLoader } from 'next-sanity/image';
 
-export default function BlogCard(n) {
+export default function BlogCard({key, title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
 	return (
 		<HoverScaleAnimation>
-			<Link href={`/blog/${n.slug}`}>
+			<Link href={`/blog/${slug}`}>
 				<Card
 					id='blog-card'
-					className={`cursor-pointer dark:bg-foreground/5 border border-background dark:border-foreground/10 w-full items-stretch ${n.isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}
+					className={`cursor-pointer dark:bg-foreground/5 border border-background dark:border-foreground/10 w-full items-stretch ${isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}
 				>
 					<div
-						className={`relative h-35 w-full shrink-0 overflow-hidden rounded-md ${n.isFeatured === true ? 'h-45' : 'lg:h-30 lg:w-30'}`}
+						className={`relative h-35 w-full shrink-0 overflow-hidden rounded-md ${isFeatured === true ? 'h-45' : 'lg:h-30 lg:w-30'}`}
 					>
-						{n.imgSrc ? (
+						{imgSrc ? (
 							<Image
 								loader={imageLoader}
 								loading='eager'
 								className='pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none'
-								src={urlFor(n.imgSrc.asset._ref).url()}
-								alt={n.imgAlt.alt}
+								src={urlFor(imgSrc.asset._ref).url()}
+								alt={imgAlt.alt}
 								fill={true}
 							/>
 						) : (
@@ -36,16 +36,16 @@ export default function BlogCard(n) {
 						<Card.Header className='flex flex-col gap-0.75'>
 							{' '}
 							<h6 className='ml-1 font-jetbrains text-foreground/45 dark:text-foreground/35'>
-								{n.publishedAt && n.publishedAt}
+								{publishedAt && publishedAt}
 							</h6>
 							<Card.Title className='text-xl md:text-2xl font-jetbrains text-foreground/85 text-balance break-all'>
-								{n.title}
+								{title}
 							</Card.Title>
 						</Card.Header>
 						<Card.Footer className='flex flex-row gap-3'>
 							<div className='flex flex-row gap-2'>
-								{n.categories &&
-									n.categories.map((category) => (
+								{categories &&
+									categories.map((category) => (
 										<TagChip key={category.title} text={category.title} />
 									))}
 							</div>
@@ -62,14 +62,14 @@ export default function BlogCard(n) {
 	);
 }
 
-export function TagChip(n) {
+export function TagChip({chipText}) {
 	return (
 		<>
 			<Chip
 				size='lg'
 				className='px-1.5 rounded-xs font-jetbrains bg-background dark:bg-background/70  text-foreground/60 '
 			>
-				{n.text}
+				{chipText}
 			</Chip>
 		</>
 	);

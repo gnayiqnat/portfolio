@@ -4,7 +4,7 @@ import { sanityFetch } from '@/sanity/lib/live';
 import CardCustom from '../animations/motion-card';
 
 export default async function BlogSection() {
-	const { data: posts } = await sanityFetch({
+	const { data: posts = [] } = await sanityFetch({
 		query: POSTS_QUERY,
 		params: { limit: 3 },
 	});
