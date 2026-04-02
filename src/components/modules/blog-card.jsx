@@ -5,6 +5,7 @@ import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import { imageLoader } from 'next-sanity/image';
+import DateFromNow from './date';
 
 export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
 	return (
@@ -36,7 +37,7 @@ export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt
 						<Card.Header className='flex flex-col gap-0.75'>
 							{' '}
 							<h6 className='ml-1 font-jetbrains text-foreground/45 dark:text-foreground/35'>
-								{publishedAt && publishedAt}
+								<DateFromNow type='short' date={publishedAt} />
 							</h6>
 							<Card.Title className='text-xl md:text-2xl font-jetbrains text-foreground/85 text-balance break-all'>
 								{title}

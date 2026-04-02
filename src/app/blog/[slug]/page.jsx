@@ -10,6 +10,7 @@ import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
 import MotionOpacityAnimation from '@/components/animations/motion-opacity';
+import DateFromNow from '@/components/modules/date';
 
 // Queries
 
@@ -28,7 +29,9 @@ export async function generateStaticParams() {
 // PortableText Components
 const components = {
 	block: {
-		normal: ({ children }) => <p className='text-lg text-foreground/93'>{children}</p>,
+		normal: ({ children }) => (
+			<p className='text-lg text-foreground/93'>{children}</p>
+		),
 	},
 	types: {
 		image: ({ value }) => {
@@ -109,9 +112,7 @@ export default async function PostPage({ params }) {
 								<h1 className='text-2xl/7  sm:text-3xl md:text-4xl lg:text-5xl font-bold sm:text-balance break-all text-foreground/95'>
 									{post.title}
 								</h1>
-								<div className='flex flex-col gap-3 text-foreground/45'>
-									<h2>{post.publishedAt}</h2>
-								</div>
+								<DateFromNow date={post.publishedAt} />
 							</div>
 						</div>
 						<div className='grid lg:grid-cols-3 gap-8'>
@@ -132,7 +133,9 @@ export default async function PostPage({ params }) {
 								<PortableText value={post.body} components={components} />
 							</div>
 							<div className='flex flex-col items-center px-2 py-10 gap-3'>
-								<h2 className={` text-xl md:text-2xl font-jetbrains font-light text-foreground/60`}>
+								<h2
+									className={` text-xl md:text-2xl font-jetbrains font-light text-foreground/60`}
+								>
 									{`-= { latest } =-`}
 								</h2>
 								<ul className='p-3 flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-col gap-5 lg:gap-y-2'>
