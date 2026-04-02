@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html
 			lang='en'
-			className={`h-full antialiased ${(jetbrains.variable, tinos.variable, libreBarcode.variable)}`}
+			className={`h-full antialiased ${(jetbrains.variable)} ${tinos.variable} ${libreBarcode.variable}`}
 			suppressHydrationWarning
 		>
 			<body className='min-h-full flex flex-col items-center'>
