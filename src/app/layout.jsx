@@ -4,7 +4,6 @@ import {
 	Tinos,
 } from 'next/font/google';
 import './globals.css';
-import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { ThemeProvider } from '@wrksz/themes/next';
 import NavBar from '@/components/modules/nav-bar';
@@ -31,18 +30,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
 	return (
 		<html
 			lang='en'
-			className={cn(
-				'h-full',
-				'antialiased',
-				jetbrains.variable,
-				'font-sans',
-				tinos.variable,
-				libreBarcode.variable,
-			)}
+			className={`h-full antialiased ${(jetbrains.variable, tinos.variable, libreBarcode.variable)}`}
 			suppressHydrationWarning
 		>
 			<body className='min-h-full flex flex-col items-center'>
