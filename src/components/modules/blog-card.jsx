@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { imageLoader } from 'next-sanity/image';
 
-export default function BlogCard({key, title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
+export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
 	return (
 		<HoverScaleAnimation>
 			<Link href={`/blog/${slug}`}>
