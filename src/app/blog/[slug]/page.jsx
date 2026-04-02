@@ -79,7 +79,7 @@ export default async function PostPage({ params }) {
 				<MotionOpacityAnimation duration='0.5' delay='0'>
 					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 						{' '}
-						<div className='pb-3 text-lg text-foreground/40'>
+						<div className='pb-3 text-base sm:text-lg text-foreground/40'>
 							<Link className='hover:underline' href='/'>
 								HOME
 							</Link>{' '}
@@ -106,7 +106,7 @@ export default async function PostPage({ params }) {
 											</Chip>
 										))}
 								</div>
-								<h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-balance break-all text-foreground/95'>
+								<h1 className='text-2xl/7  sm:text-3xl md:text-4xl lg:text-5xl font-bold sm:text-balance break-all text-foreground/95'>
 									{post.title}
 								</h1>
 								<div className='flex flex-col gap-3 text-foreground/45'>
