@@ -1,4 +1,3 @@
-import { MotionOpacityAnimation } from '@/components/animations/motion-card';
 import BlogCard from '@/components/modules/blog-card';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -10,6 +9,7 @@ import Image from 'next/image';
 import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
+import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 
 // Queries
 

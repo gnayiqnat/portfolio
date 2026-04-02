@@ -1,9 +1,9 @@
-import { MotionOpacityAnimation } from '@/components/animations/motion-card';
 import BlogCard from '@/components/modules/blog-card';
 import { sanityFetch } from '@/sanity/lib/live';
 import { POSTS_QUERY } from '@/sanity/lib/queries';
 import Link from 'next/link';
 import { ReactLenis } from 'lenis/react';
+import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 
 export default async function IndexPage() {
 	const { data: posts } = await sanityFetch({
