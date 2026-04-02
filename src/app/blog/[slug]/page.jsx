@@ -1,3 +1,4 @@
+import { MotionOpacityAnimation } from '@/components/animations/motion-card';
 import BlogCard from '@/components/modules/blog-card';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -9,7 +10,6 @@ import Image from 'next/image';
 import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
-import CardCustom from '@/components/animations/motion-card';
 
 // Queries
 
@@ -76,7 +76,7 @@ export default async function PostPage({ params }) {
 			{' '}
 			<ScrollToTop>
 				<ReactLenis root />
-				<CardCustom>
+				<MotionOpacityAnimation duration='0.5' delay='0'>
 					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 						{' '}
 						<div className='pb-3 text-lg text-foreground/40'>
@@ -153,7 +153,7 @@ export default async function PostPage({ params }) {
 							</div>
 						</div>
 					</main>
-				</CardCustom>
+				</MotionOpacityAnimation>
 			</ScrollToTop>
 		</>
 	);

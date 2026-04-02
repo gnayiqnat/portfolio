@@ -1,9 +1,9 @@
+import { MotionOpacityAnimation } from '@/components/animations/motion-card';
 import BlogCard from '@/components/modules/blog-card';
 import { sanityFetch } from '@/sanity/lib/live';
 import { POSTS_QUERY } from '@/sanity/lib/queries';
 import Link from 'next/link';
 import { ReactLenis } from 'lenis/react';
-import CardCustom from '@/components/animations/motion-card';
 
 export default async function IndexPage() {
 	const { data: posts } = await sanityFetch({
@@ -15,7 +15,7 @@ export default async function IndexPage() {
 		<>
 			{' '}
 			<ReactLenis root />
-			<CardCustom>
+			<MotionOpacityAnimation duration='0.5' delay='0'>
 				<main className='pt-22 mt-5 container mx-auto min-h-screen max-w-6xl flex flex-col gap-7 p-8 sm:px-32 md:px-48 lg:px-20'>
 					<div className='pb-3 text-lg text-foreground/40'>
 						<Link className='hover:underline' href='/'>
@@ -42,7 +42,7 @@ export default async function IndexPage() {
 						))}
 					</ul>
 				</main>
-			</CardCustom>
+			</MotionOpacityAnimation>
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import CardCustom from "../animations/motion-card";
+import CardCustom, { MotionOpacityAnimation } from "../animations/motion-card";
 import HeroCard from "../modules/hero-card";
 
 export default function HeroSection() {
