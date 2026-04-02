@@ -1,7 +1,7 @@
 import { POSTS_QUERY } from '@/sanity/lib/queries';
-import MotionCardAnimation from '../animations/motion-card';
 import BlogCard from '../modules/blog-card';
 import { sanityFetch } from '@/sanity/lib/live';
+import CardCustom from '../animations/motion-card';
 
 export default async function BlogSection() {
 	const { data: posts } = await sanityFetch({
@@ -11,7 +11,7 @@ export default async function BlogSection() {
 
 	return (
 		<>
-			<MotionCardAnimation>
+			<CardCustom>
 				<h2 id='blog' className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}>
 					{`->~== { blog } ==~<-`}
 				</h2>
@@ -30,7 +30,7 @@ export default async function BlogSection() {
 						/>
 					))}
 				</div>
-			</MotionCardAnimation>
+			</CardCustom>
 		</>
 	);
 }

@@ -3,7 +3,7 @@ import { Card, Chip } from '@heroui/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
-import MotionCardAnimation from '../animations/motion-card';
+import CardCustom from '../animations/motion-card';
 
 const websites = [
 	{
@@ -31,7 +31,7 @@ const websites = [
 export default function ProjectSection() {
 	return (
 		<>
-			<MotionCardAnimation id='projects'>
+			<CardCustom id='projects'>
 				{' '}
 				<div className='flex flex-col gap-5'>
 					<div className='w-full flex flex-col justify-center items-center gap-3'>
@@ -65,7 +65,7 @@ export default function ProjectSection() {
 						</div>
 					</div>
 				</div>
-			</MotionCardAnimation>
+			</CardCustom>
 		</>
 	);
 }

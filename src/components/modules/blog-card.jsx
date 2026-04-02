@@ -4,6 +4,7 @@ import { LuMessageSquare } from 'react-icons/lu';
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
+import { imageLoader } from 'next-sanity/image';
 
 export default function BlogCard(n) {
 	return (
@@ -18,6 +19,8 @@ export default function BlogCard(n) {
 					>
 						{n.imgSrc ? (
 							<Image
+								loader={imageLoader}
+								loading='eager'
 								className='pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none'
 								src={urlFor(n.imgSrc.asset._ref).url()}
 								alt={n.imgAlt.alt}

@@ -1,9 +1,9 @@
-import { MotionOpacityAnimation } from "../animations/motion-card";
+import CardCustom, { MotionOpacityAnimation } from "../animations/motion-card";
 import HeroCard from "../modules/hero-card";
 
 export default function HeroSection() {
 	return (
-		<MotionOpacityAnimation delay='0.25'>
+		<CardCustom>
 			<div className='pt-22 max-w-5xl w-full flex flex-col md:grid h-svh md:grid-cols-2 md:grid-rows-1 gap-4 p-8 lg:p-24 items-center justify-center md:justify-between'>
 				<div className='w-full flex flex-col md:grid md:grid-rows-2 md:gap-4'>
 					<div className='mt-4 mb-2 md:m-0 order-2 md:order-first justify-center md:justify-end w-full  flex flex-col flex-nowrap'>
@@ -25,6 +25,6 @@ export default function HeroSection() {
 					<HeroCard text='projects' type='normal' imageIndex={1} />
 				</div>
 			</div>
-		</MotionOpacityAnimation>
+		</CardCustom>
 	);
 }

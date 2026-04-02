@@ -1,10 +1,10 @@
 
-import MotionCardAnimation from '../animations/motion-card';
+import CardCustom from '../animations/motion-card';
 
 export default function AboutSection() {
 	return (
 		<>
-			<MotionCardAnimation>
+			<CardCustom>
 				<h2
 					id='about'
 					className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
@@ -16,7 +16,7 @@ export default function AboutSection() {
 					dignissimos ab unde, reprehenderit nemo. A ipsa voluptas, odit rem delectus
 					nulla asperiores, neque quis, consequatur qui quos dolorum sint.
 				</h3>
-			</MotionCardAnimation>
+			</CardCustom>
 		</>
 	);
 }

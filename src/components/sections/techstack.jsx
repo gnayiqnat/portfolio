@@ -1,4 +1,3 @@
-
 import {
 	IoLogoCss3,
 	IoLogoHtml5,
@@ -7,13 +6,12 @@ import {
 	IoLogoReact,
 } from 'react-icons/io5';
 import { SiFastapi, SiPostgresql } from 'react-icons/si';
-import MotionCardAnimation from '../animations/motion-card';
-
+import CardCustom from '../animations/motion-card';
 
 export default function TechstackSection() {
 	return (
 		<>
-			<MotionCardAnimation>
+			<CardCustom>
 				<div className='flex flex-col justify-center items-center gap-3'>
 					<h2 className='text-xl md:text-2xl font-jetbrains font-light text-foreground'>
 						{`==> { techstack } <==`}{' '}
@@ -31,7 +29,7 @@ export default function TechstackSection() {
 					<TechstackCard logo={<SiFastapi />} name='FastAPI' />{' '}
 					<TechstackCard logo={<SiPostgresql />} name='PostgreSQL' />{' '}
 				</div>
-			</MotionCardAnimation>
+			</CardCustom>
 		</>
 	);
 }
