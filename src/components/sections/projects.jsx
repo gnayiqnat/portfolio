@@ -7,7 +7,6 @@ import CardCustom from '../animations/motion-card';
 
 const websites = [
 	{
-		img: '/msssa.png',
 		name: 'MSSSA',
 		year: '2023',
 		description: `A website designed to log students' attendance. Everything from the
@@ -17,7 +16,6 @@ const websites = [
 		technologies: ['react', 'mui'],
 	},
 	{
-		img: '/digiasc.png',
 		name: 'Digital Ascent',
 		year: '2024',
 		description: `A website designed to log students' attendance. Everything from the
@@ -78,12 +76,6 @@ function WebCard(n) {
 				className={` border-2 w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
 			>
 				<Card.Header className='flex gap-2.5'>
-					<img
-						alt='msssa'
-						aria-hidden='true'
-						className='blur-xs opacity-15 absolute inset-0 h-full w-full object-cover pointer-events-none'
-						src={properties.img}
-					/>
 					<div className='flex flex-row gap-2 items-center'>
 						<Card.Title
 							className={`font-tinos font-bold text-2xl ${n.type == 'dark' && ' text-white'}`}
