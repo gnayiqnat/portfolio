@@ -9,7 +9,7 @@ export default function DateFromNow({ date, type }) {
 		<>
 			{type === 'short' ? (
 				<div className='text-foreground/45'>
-					<h4>{timeFromNow}</h4>
+					<h4>Posted {timeFromNow}</h4>
 				</div>
 			) : (
 				<div className='flex flex-row gap-3 text-foreground/45'>
