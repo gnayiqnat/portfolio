@@ -44,7 +44,7 @@ function NavButton(n) {
 	return (
 		<>
 			<HoverScaleAnimation>
-				<Link href={n.href}>
+				<Link href={n.href} passHref>
 					<Button
 						className={`md:px-3 lg:px-4 ${pathname.endsWith(n.href) ? 'bg-gray-700 text-gray-100' : 'bg-background text-foreground/70'} rounded-sm text-[18px] md:text-sm lg:text-base border-2 border-foreground/30`}
 					>

@@ -10,7 +10,7 @@ import DateFromNow from './date';
 export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
 	return (
 		<HoverScaleAnimation>
-			<Link href={`/blog/${slug}`}>
+			<Link href={`/blog/${slug}`} passHref>
 				<Card
 					id='blog-card'
 					className={`cursor-pointer dark:bg-foreground/5 border border-background dark:border-foreground/10 w-full items-stretch ${isFeatured === true ? 'h-full' : 'lg:flex-row'} rounded-xl`}

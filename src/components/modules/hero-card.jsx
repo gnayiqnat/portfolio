@@ -14,7 +14,7 @@ export default function HeroCard(n) {
 	return (
 		<>
 			{n.text === 'blog' ? (
-				<Link href='/blog'>
+				<Link href='/blog' passHref>
 					<HeroCardAnimation>
 							{n.type == 'small' ? (
 								<>
