@@ -47,7 +47,7 @@ export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt
 							<div className='flex flex-row gap-2'>
 								{categories &&
 									categories.map((category) => (
-										<TagChip key={category.title} text={category.title} />
+										<TagChip key={category.title} chipText={category.title} />
 									))}
 							</div>
 							<Separator orientation='vertical' className='bg-foreground/15' />
