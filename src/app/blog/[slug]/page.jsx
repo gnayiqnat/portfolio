@@ -3,7 +3,7 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { sanityFetch } from '@/sanity/lib/live';
 import { POST_QUERY, POSTS_QUERY, SLUG_QUERY } from '@/sanity/lib/queries';
-import { Chip } from '@heroui/react';
+import { Button, Chip } from '@heroui/react';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
 import { ReactLenis } from 'lenis/react';
@@ -11,8 +11,12 @@ import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
 import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 import DateFromNow from '@/components/modules/date';
+import { extractHeadings } from '@/components/utils/extractHeadings';
+import TableOfContents from '@/components/modules/table-of-contents';
 
 // Queries
+
+// Metadata
 
 // Revalidate after 60 seconds
 export const revalidate = 60;
@@ -32,6 +36,28 @@ const components = {
 		normal: ({ children }) => (
 			<p className='text-lg text-foreground/93'>{children}</p>
 		),
+		h2: ({ children, value }) => {
+			const slug = value.children[0].text.toLowerCase().replace(/\s+/g, '-');
+			return (
+				<h2
+					id={slug}
+					className='scroll-mt-35 text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-bold'
+				>
+					{children}
+				</h2>
+			);
+		},
+		h3: ({ children, value }) => {
+			const slug = value.children[0].text.toLowerCase().replace(/\s+/g, '-');
+			return (
+				<h3
+					id={slug}
+					className='scroll-mt-35 text-xl md:text-2xl lg:text-3xl text-foreground/90 font-bold'
+				>
+					{children}
+				</h3>
+			);
+		},
 	},
 	types: {
 		image: ({ value }) => {
@@ -65,6 +91,8 @@ export default async function PostPage({ params }) {
 		query: POSTS_QUERY,
 		params: { limit: 4 },
 	});
+
+	const headings = extractHeadings(post.body);
 
 	if (!post) {
 		return (
@@ -130,6 +158,7 @@ export default async function PostPage({ params }) {
 										<p className='text-gray-500 ml-2'>{post.mainImage.alt}</p>
 									</div>
 								)}
+								<TableOfContents headings={headings} />
 								<PortableText value={post.body} components={components} />
 							</div>
 							<div className='flex flex-col items-center px-2 py-10 gap-3'>
@@ -154,6 +183,9 @@ export default async function PostPage({ params }) {
 									))}
 								</ul>
 							</div>
+						</div>
+						<div className='fixed bottom-8 right-8'>
+							<Button>top</Button>
 						</div>
 					</main>
 				</MotionOpacityAnimation>
