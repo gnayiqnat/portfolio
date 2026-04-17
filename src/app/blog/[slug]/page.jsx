@@ -13,6 +13,7 @@ import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 import DateFromNow from '@/components/modules/date';
 import { extractHeadings } from '@/components/utils/extractHeadings';
 import TableOfContents from '@/components/modules/table-of-contents';
+import ScrollTopButton from '@/components/modules/scroll-to-top-button';
 
 // Queries
 
@@ -184,9 +185,7 @@ export default async function PostPage({ params }) {
 								</ul>
 							</div>
 						</div>
-						<div className='fixed bottom-8 right-8'>
-							<Button>top</Button>
-						</div>
+						<ScrollTopButton />
 					</main>
 				</MotionOpacityAnimation>
 			</ScrollToTop>

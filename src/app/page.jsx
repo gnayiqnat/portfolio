@@ -1,4 +1,5 @@
 import NavBar from '@/components/modules/nav-bar';
+import ScrollTopButton from '@/components/modules/scroll-to-top-button';
 import AboutSection from '@/components/sections/about';
 import BlogSection from '@/components/sections/blog';
 import ContactSection from '@/components/sections/contact';
@@ -21,6 +22,7 @@ export default function Home() {
 				<TechstackSection />
 				<AboutSection />
 				<Footer />
+				<ScrollTopButton />
 			</div>
 		</>
 	);
