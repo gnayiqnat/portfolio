@@ -7,6 +7,7 @@ import { Button, Drawer } from '@heroui/react';
 import HoverScaleAnimation from '../animations/hover-scale';
 import ThemeSelector from './theme-select';
 import { LuMenu } from 'react-icons/lu';
+import Logo from './website-logo';
 
 export default function NavBar() {
 	const pathname = usePathname();
@@ -14,12 +15,10 @@ export default function NavBar() {
 	return (
 		<>
 			<div className='fixed w-full flex flex-col z-50'>
-				<div className='px-6  lg:px-10 h-19 backdrop-blur-2xl flex sm:justify-between items-center bg-background/40 border-b'>
+				<div className='px-6 lg:px-10 h-19 backdrop-blur-2xl flex sm:justify-between items-center bg-background/40 border-b'>
 					<div className='flex flex-row gap-5'>
 						<NavDrawer />
-						<Link href='/'>
-							<span className='font-barcode text-4xl text-foreground/90'>TAN QI YANG</span>
-						</Link>
+						<Logo />
 					</div>
 					<div className='hidden md:flex flex-col md:flex-row gap-3'>
 						<NavButton text='Home' href='/' />
