@@ -35,7 +35,7 @@ export async function generateStaticParams() {
 const components = {
 	block: {
 		normal: ({ children }) => (
-			<p className='text-lg text-foreground/93'>{children}</p>
+			<p className='text-foreground/93'>{children}</p>
 		),
 		h2: ({ children, value }) => {
 			const slug = value.children[0].text.toLowerCase().replace(/\s+/g, '-');

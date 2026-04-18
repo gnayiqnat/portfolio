@@ -7,14 +7,14 @@ export default function TableOfContents({ headings }) {
 	const lenis = useLenis();
 
 	return (
-		<nav className='mt-5 mb-8 border-2 rounded-md flex flex-col pr-2 p-5 md:pl-8 gap-3 bg-foreground/1'>
+		<nav className='mt-5 mb-8 border-2 rounded-md flex flex-col pr-2 p-5 md:pl-8 gap-2 bg-foreground/1'>
 			<span>
 				<h2 className='text-xl sm:text-2xl mt-1 font-bold text-foreground/80'>
 					{'Table of Contents'}
 				</h2>
 				<p className='font-bold sm:text-xl'>-----------------------</p>
 			</span>
-			<ul className='sm:pl-3 pr-4 flex flex-col gap-1'>
+			<ul className='sm:pl-3 pr-4'>
 				{headings.map((heading) => (
 					<li
 						key={heading.slug}
@@ -25,7 +25,7 @@ export default function TableOfContents({ headings }) {
 							onClick={() => {
 								lenis?.scrollTo(`#${heading.slug}`);
 							}}
-							className={`hover:underline cursor-pointer text-lg sm:text-xl`}
+							className={`hover:underline cursor-pointer text-base sm:text-lg`}
 						>
 							{heading.text}
 						</p>
