@@ -20,7 +20,7 @@ const websites = [
 		year: '2024',
 		description: `A website for an indie game studio built on Vite. Email logic is built on Supabase, secured with Cloudflare Turnstile. `,
 		technologies: ['react'],
-		sunset: true
+		sunset: true,
 	},
 ];
 
@@ -75,13 +75,21 @@ function WebCard(n) {
 			>
 				<Card.Header className='flex gap-2.5'>
 					<div className='flex flex-row justify-between'>
-						<div className='flex flex-row gap-2 items-center'>
+						<div className='flex flex-col sm:flex-row gap-2 sm:items-center'>
+							<Card.Description className='sm:hidden'>
+								<Chip
+									size='sm'
+									className={`rounded-sm bg-none opacity-70 pl-2 pr-2 text-[13px] ${n.type == 'dark' && 'bg-gray-700 text-white border-gray-600 border-2'}`}
+								>
+									{properties.year}
+								</Chip>
+							</Card.Description>{' '}
 							<Card.Title
 								className={`font-tinos font-bold text-2xl ${n.type == 'dark' && ' text-white'}`}
 							>
 								{properties.name}
 							</Card.Title>
-							<Card.Description>
+							<Card.Description className='hidden sm:inline'>
 								<Chip
 									size='sm'
 									className={`rounded-sm bg-none opacity-70 pl-2 pr-2 text-[13px] ${n.type == 'dark' && 'bg-gray-700 text-white border-gray-600 border-2'}`}
@@ -94,10 +102,9 @@ function WebCard(n) {
 							<Tooltip delay={0}>
 								<Tooltip.Trigger aria-label='Info icon'>
 									<div
-										className={`flex flex-row items-center gap-1 cursor-pointer rounded-md p-1 border-2  ${n.type == 'dark' ? ' text-yellow-200 border-yellow-200/30 bg-yellow-50/10' : 'text-yellow-950/70 border-yellow-800/20 bg-yellow-100'}`}
+										className={`flex flex-row items-center gap-1 cursor-pointer rounded-md p-1.5 border-2  ${n.type == 'dark' ? ' text-gray-200 border-gray-200/30 bg-gray-50/10' : 'text-gray-950/70 border-gray-800/20 bg-gray-100'}`}
 									>
-										<LuInfo className='text-sm' />
-										<p className='text-xs'>INFO</p>
+										<LuInfo />
 									</div>
 								</Tooltip.Trigger>
 								<Tooltip.Content showArrow>
@@ -105,8 +112,9 @@ function WebCard(n) {
 									<div className='max-w-xs px-1 py-1.5'>
 										<p className='mb-1 font-semibold'>-- Notice --</p>
 										<p className='text-sm text-muted'>
-											This project is currently a static archive. While the core UI
-											remains, some backend features are no longer active.
+											This project is currently a static archive. <br />
+											<br /> While the core UI remains, some backend features are{' '}
+											<span className='font-bold text-red-700'>no longer active</span>.
 										</p>
 									</div>
 								</Tooltip.Content>
