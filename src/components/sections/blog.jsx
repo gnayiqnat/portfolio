@@ -2,6 +2,7 @@ import { POSTS_QUERY } from '@/sanity/lib/queries';
 import BlogCard from '../modules/blog-card';
 import { sanityFetch } from '@/sanity/lib/live';
 import CardCustom from '../animations/motion-card';
+import BorderButton from '../modules/border-button';
 
 export default async function BlogSection() {
 	const { data: posts = [] } = await sanityFetch({
@@ -31,6 +32,9 @@ export default async function BlogSection() {
 							slug={post.slug.current}
 						/>
 					))}
+					<div className='w-full flex justify-center mt-7'>
+						<BorderButton type='large' text='VIEW ALL POSTS' url='/blog' />
+					</div>
 				</div>
 			</CardCustom>
 		</>
