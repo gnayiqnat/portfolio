@@ -11,8 +11,10 @@ export default async function BlogSection() {
 
 	return (
 		<>
-			<CardCustom>
-				<h2 id='blog' className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}>
+			<CardCustom id='blog'>
+				<h2
+					className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
+				>
 					{`->~== { blog } ==~<-`}
 				</h2>
 				{/* <h3 className='px-0 sm:px-8 font-jetbrains max-w-125 opacity-50 text-center text-balance'>
@@ -22,7 +24,7 @@ export default async function BlogSection() {
 						<BlogCard
 							key={post._id}
 							title={post.title}
-							categories={post.categories &&  post.categories}
+							categories={post.categories && post.categories}
 							publishedAt={post.publishedAt}
 							imgSrc={post.mainImage && post.mainImage}
 							imgAlt={post.mainImage && post.mainImage}
