@@ -18,7 +18,7 @@ import { useForm } from 'react-hook-form';
 import { LuInfo, LuMailCheck } from 'react-icons/lu';
 import CardCustom from '../animations/motion-card';
 
-export default function ContactSection() {
+export default function ContactSection({width=''}) {
 	const { setValue, reset } = useForm({
 		defaultValues: {},
 	});
@@ -60,7 +60,7 @@ export default function ContactSection() {
 	};
 	return (
 		<>
-			<CardCustom id='contact'>
+			<CardCustom id='contact' width={width}>
 				{' '}
 				<h2 className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}>
 					{`>= { get in touch } <=`}{' '}
