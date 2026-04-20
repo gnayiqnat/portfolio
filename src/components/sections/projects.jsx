@@ -5,6 +5,7 @@ import { SiMui } from 'react-icons/si';
 import CardCustom from '../animations/motion-card';
 import { LuExternalLink, LuInfo } from 'react-icons/lu';
 import Link from 'next/link';
+import BorderButton from '../modules/border-button';
 
 const websites = [
 	{
@@ -22,8 +23,10 @@ const websites = [
 		year: '2024',
 		description: (
 			<>
-				A website for an indie game studio, built with Vite and legacy Hero UI. <br /><br />
-				Email logic is built on Supabase, secured with Cloudflare Turnstile. 
+				A website for an indie game studio, built with Vite and legacy Hero UI.{' '}
+				<br />
+				<br />
+				Email logic is built on Supabase, secured with Cloudflare Turnstile.
 			</>
 		),
 		url: 'https://digiasc.pages.dev',
@@ -129,13 +132,13 @@ function WebCard(n) {
 							</Tooltip>
 						)}
 					</div>
-					
-				</Card.Header><Card.Content
-						className={`font-tinos text-lg leading-6 text-foreground/80 ${n.type == 'dark' && 'text-gray-300'}`}
-					>
-						<p>{properties.description}</p>
-					</Card.Content>
-				<Card.Footer className='flex flex-col items-start gap-y-4'>
+				</Card.Header>
+				<Card.Content
+					className={`flex justify-center font-tinos text-lg leading-6 text-foreground/80 ${n.type == 'dark' && 'text-gray-300'}`}
+				>
+					<p>{properties.description}</p>
+				</Card.Content>
+				<Card.Footer className='flex flex-col items-start gap-y-3'>
 					<div className='flex gap-1'>
 						<Chip className='rounded-sm bg-gray-900/90 text-blue-100 text-sm flex gap-2'>
 							<FaReact />
@@ -146,13 +149,9 @@ function WebCard(n) {
 							Material UI
 						</Chip>
 					</div>
-					<Link target='_blank' href={properties.url} rel='noopener noreferrer'>
-						<Button
-							className={`rounded-sm  border-2 ${n.type == 'dark' ? 'dark:text-foreground bg-background/3 dark:border-foreground/40 border-background/20' : 'text-foreground bg-foreground/3'}`}
-						>
-							VISIT <LuExternalLink />
-						</Button>
-					</Link>
+					<div className=''>
+						<BorderButton type='normal' text='VISIT' url={properties.url} newTab={true} darkBg={n.type} />
+					</div>
 				</Card.Footer>
 			</Card>
 		</>
