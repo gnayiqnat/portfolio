@@ -22,7 +22,7 @@ const websites = [
 		year: '2024',
 		description: (
 			<>
-				A website for an indie game studio built on Vite and legacy Hero UI. <br /><br />
+				A website for an indie game studio, built with Vite and legacy Hero UI. <br /><br />
 				Email logic is built on Supabase, secured with Cloudflare Turnstile. 
 			</>
 		),
