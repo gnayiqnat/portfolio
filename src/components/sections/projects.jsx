@@ -1,9 +1,10 @@
-import { Card, Chip, Tooltip } from '@heroui/react';
+import { Button, Card, Chip, Tooltip } from '@heroui/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
 import CardCustom from '../animations/motion-card';
-import { LuInfo } from 'react-icons/lu';
+import { LuExternalLink, LuInfo } from 'react-icons/lu';
+import Link from 'next/link';
 
 const websites = [
 	{
@@ -13,12 +14,19 @@ const websites = [
 						authentication, to the data storage and analytics are powered by Supabase.
 						I have put a greater emphasis into the animations of the website, giving
 						it life and bubbliness.`,
+		url: 'https://msssa.pages.dev',
 		technologies: ['react', 'mui'],
 	},
 	{
 		name: 'Digital Ascent',
 		year: '2024',
-		description: `A website for an indie game studio built on Vite. Email logic is built on Supabase, secured with Cloudflare Turnstile. `,
+		description: (
+			<>
+				A website for an indie game studio built on Vite and legacy Hero UI. <br /><br />
+				Email logic is built on Supabase, secured with Cloudflare Turnstile. 
+			</>
+		),
+		url: 'https://digiasc.pages.dev',
 		technologies: ['react'],
 		sunset: true,
 	},
@@ -71,7 +79,7 @@ function WebCard(n) {
 	return (
 		<>
 			<Card
-				className={` border-2 w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
+				className={` border-2 w-full flex flex-col justify-between h-full ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
 			>
 				<Card.Header className='flex gap-2.5'>
 					<div className='flex flex-row justify-between'>
@@ -121,23 +129,30 @@ function WebCard(n) {
 							</Tooltip>
 						)}
 					</div>
-					<Card.Content
+					
+				</Card.Header><Card.Content
 						className={`font-tinos text-lg leading-6 text-foreground/80 ${n.type == 'dark' && 'text-gray-300'}`}
 					>
-						{properties.description}
+						<p>{properties.description}</p>
 					</Card.Content>
-				</Card.Header>
-				<Card.Footer>
+				<Card.Footer className='flex flex-col items-start gap-y-4'>
 					<div className='flex gap-1'>
-						<Chip className='rounded-sm bg-gray-950 text-blue-100 text-sm flex gap-2'>
+						<Chip className='rounded-sm bg-gray-900/90 text-blue-100 text-sm flex gap-2'>
 							<FaReact />
 							React
 						</Chip>
-						<Chip className='p-1 pl-2.5 pr-2.5 rounded-sm bg-gray-950 text-blue-400 text-sm flex gap-2'>
+						<Chip className='p-1 pl-2.5 pr-2.5 rounded-sm bg-gray-900/90 text-blue-400 text-sm flex gap-2'>
 							<SiMui />
 							Material UI
 						</Chip>
 					</div>
+					<Link target='_blank' href={properties.url} rel='noopener noreferrer'>
+						<Button
+							className={`rounded-sm  border-2 ${n.type == 'dark' ? 'dark:text-foreground bg-background/3 dark:border-foreground/40 border-background/20' : 'text-foreground bg-foreground/3'}`}
+						>
+							VISIT <LuExternalLink />
+						</Button>
+					</Link>
 				</Card.Footer>
 			</Card>
 		</>
