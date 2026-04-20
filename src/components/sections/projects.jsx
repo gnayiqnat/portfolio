@@ -1,9 +1,9 @@
-
-import { Card, Chip } from '@heroui/react';
+import { Card, Chip, Tooltip } from '@heroui/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
 import CardCustom from '../animations/motion-card';
+import { LuInfo } from 'react-icons/lu';
 
 const websites = [
 	{
@@ -18,11 +18,9 @@ const websites = [
 	{
 		name: 'Digital Ascent',
 		year: '2024',
-		description: `A website designed to log students' attendance. Everything from the
-						authentication, to the data storage and analytics are powered by Supabase.
-						I have put a greater emphasis into the animations of the website, giving
-						it life and bubbliness.	`,
+		description: `A website for an indie game studio built on Vite. Email logic is built on Supabase, secured with Cloudflare Turnstile. `,
 		technologies: ['react'],
+		sunset: true
 	},
 ];
 
@@ -76,20 +74,44 @@ function WebCard(n) {
 				className={` border-2 w-full flex flex-col justify-around gap-4 h-fit ${n.type == 'dark' ? 'bg-gray-800' : 'bg-card'} rounded-xl`}
 			>
 				<Card.Header className='flex gap-2.5'>
-					<div className='flex flex-row gap-2 items-center'>
-						<Card.Title
-							className={`font-tinos font-bold text-2xl ${n.type == 'dark' && ' text-white'}`}
-						>
-							{properties.name}
-						</Card.Title>
-						<Card.Description>
-							<Chip
-								size='sm'
-								className={`rounded-sm bg-none opacity-70 pl-2 pr-2 text-[13px] ${n.type == 'dark' && 'bg-gray-700 text-white border-gray-600 border-2'}`}
+					<div className='flex flex-row justify-between'>
+						<div className='flex flex-row gap-2 items-center'>
+							<Card.Title
+								className={`font-tinos font-bold text-2xl ${n.type == 'dark' && ' text-white'}`}
 							>
-								{properties.year}
-							</Chip>
-						</Card.Description>
+								{properties.name}
+							</Card.Title>
+							<Card.Description>
+								<Chip
+									size='sm'
+									className={`rounded-sm bg-none opacity-70 pl-2 pr-2 text-[13px] ${n.type == 'dark' && 'bg-gray-700 text-white border-gray-600 border-2'}`}
+								>
+									{properties.year}
+								</Chip>
+							</Card.Description>{' '}
+						</div>
+						{properties.sunset && (
+							<Tooltip delay={0}>
+								<Tooltip.Trigger aria-label='Info icon'>
+									<div
+										className={`flex flex-row items-center gap-1 cursor-pointer rounded-md p-1 border-2  ${n.type == 'dark' ? ' text-yellow-200 border-yellow-200/30 bg-yellow-50/10' : 'text-yellow-950/70 border-yellow-800/20 bg-yellow-100'}`}
+									>
+										<LuInfo className='text-sm' />
+										<p className='text-xs'>INFO</p>
+									</div>
+								</Tooltip.Trigger>
+								<Tooltip.Content showArrow>
+									<Tooltip.Arrow />
+									<div className='max-w-xs px-1 py-1.5'>
+										<p className='mb-1 font-semibold'>-- Notice --</p>
+										<p className='text-sm text-muted'>
+											This project is currently a static archive. While the core UI
+											remains, some backend features are no longer active.
+										</p>
+									</div>
+								</Tooltip.Content>
+							</Tooltip>
+						)}
 					</div>
 					<Card.Content
 						className={`font-tinos text-lg leading-6 text-foreground/80 ${n.type == 'dark' && 'text-gray-300'}`}
