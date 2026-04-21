@@ -26,14 +26,23 @@ const libreBarcode = Libre_Barcode_128_Text({
 
 export const metadata = {
 	title: 'Tan Qi Yang',
-	description: `Hello, I am Tan Qi Yang, a full-stack web developer writing code held up by hopes and prayers.`,
+	description: `Hello, I am Tan Qi Yang, a full-stack web developer writing code held up by hopes and dreams.`,
+	openGraph: {
+		title: 'Tan Qi Yang',
+		description:
+			'A full-stack web developer writing code held up by hopes and dreams.',
+		url: 'https://tanqiyang.com/',
+		siteName: 'Tan Qi Yang',
+		locale: 'en_US',
+		type: 'website',
+	},
 };
 
 export default function RootLayout({ children }) {
 	return (
 		<html
 			lang='en'
-			className={`h-full antialiased ${(jetbrains.variable)} ${tinos.variable} ${libreBarcode.variable}`}
+			className={`h-full antialiased ${jetbrains.variable} ${tinos.variable} ${libreBarcode.variable}`}
 			suppressHydrationWarning
 		>
 			<body className='min-h-full flex flex-col items-center'>
