@@ -14,11 +14,10 @@
     "@heroui/styles": "^3.0.1",
     "@heroui/theme": "^2.4.26",
     "@sanity/icons": "^3.7.4",
-    "@sanity/image-url": "^1.2.0",
-    "@sanity/vision": "^4.22.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.21.0",
     "@wrksz/themes": "^0.8.2",
     "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lenis": "^1.3.21",
     "motion": "^12.38.0",
@@ -34,8 +33,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.1",
+    "eslint": "^10.2.1",
+    "eslint-config-next": "^16.2.4",
     "tailwindcss": "^4"
   }
 }
