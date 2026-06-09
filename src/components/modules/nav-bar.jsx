@@ -12,6 +12,9 @@ import Logo from './website-logo';
 export default function NavBar() {
 	const pathname = usePathname();
 
+	if (pathname.includes('/studio')) {
+		return <></>;
+	}
 	return (
 		<>
 			<div className='fixed w-full flex flex-col z-50'>
