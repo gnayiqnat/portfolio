@@ -15,7 +15,7 @@
     "@heroui/theme": "^2.4.26",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^2.1.1",
-    "@sanity/vision": "^5.21.0",
+    "@sanity/vision": "^6.1.0",
     "@wrksz/themes": "^0.9.0",
     "class-variance-authority": "^0.7.1",
     "date-fns": "^4.1.0",
@@ -27,7 +27,7 @@
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.72.0",
     "react-icons": "^5.6.0",
-    "sanity": "^5.14.1",
+    "sanity": "^6.1.0",
     "styled-components": "^6.3.12",
     "tailwind-merge": "^3.5.0"
   },
