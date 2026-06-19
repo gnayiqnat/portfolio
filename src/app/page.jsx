@@ -1,4 +1,3 @@
-import NavBar from '@/components/modules/nav-bar';
 import ScrollTopButton from '@/components/modules/scroll-to-top-button';
 import AboutSection from '@/components/sections/about';
 import BlogSection from '@/components/sections/blog';

@@ -1,5 +1,4 @@
 import BorderButton from '@/components/modules/border-button';
-import { Button } from '@heroui/react';
 
 export default function Page404() {
 
