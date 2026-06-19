@@ -1,10 +1,9 @@
-import { Button, Card, Chip, Tooltip } from '@heroui/react';
+import { Card, Chip, Popover } from '@heroui/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
 import CardCustom from '../animations/motion-card';
-import { LuExternalLink, LuInfo } from 'react-icons/lu';
-import Link from 'next/link';
+import { LuInfo } from 'react-icons/lu';
 import BorderButton from '../modules/border-button';
 
 const websites = [
@@ -110,26 +109,26 @@ function WebCard(n) {
 							</Card.Description>{' '}
 						</div>
 						{properties.sunset && (
-							<Tooltip delay={0}>
-								<Tooltip.Trigger aria-label='Info icon'>
+							<Popover delay={0}>
+								<Popover.Trigger aria-label='Info icon'>
 									<div
 										className={`flex flex-row items-center gap-1 cursor-pointer rounded-md p-1.5 border-2  ${n.type == 'dark' ? ' text-gray-200 border-gray-200/30 bg-gray-50/10' : 'text-gray-950/70 border-gray-800/20 bg-gray-100'}`}
 									>
 										<LuInfo />
 									</div>
-								</Tooltip.Trigger>
-								<Tooltip.Content showArrow>
-									<Tooltip.Arrow />
-									<div className='max-w-xs px-1 py-1.5'>
+								</Popover.Trigger>
+								<Popover.Content placement='top' className='rounded-xl'>
+									<Popover.Arrow />
+									<Popover.Dialog className='max-w-xs'>
 										<p className='mb-1 font-semibold'>-- Notice --</p>
 										<p className='text-sm text-muted'>
 											This project is currently a static archive. <br />
 											<br /> While the core UI remains, some backend features are{' '}
 											<span className='font-bold text-red-700'>no longer active</span>.
 										</p>
-									</div>
-								</Tooltip.Content>
-							</Tooltip>
+									</Popover.Dialog>
+								</Popover.Content>
+							</Popover>
 						)}
 					</div>
 				</Card.Header>
