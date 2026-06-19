@@ -36,10 +36,7 @@ const websites = [
 
 export default function ProjectSection() {
 	return (
-		<>
 			<CardCustom id='projects'>
-				{' '}
-				<div className='flex flex-col gap-5'>
 					<div className='w-full flex flex-col justify-center items-center gap-3'>
 						<h2
 							className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
@@ -70,9 +67,7 @@ export default function ProjectSection() {
 							<WebCard website={websites[1]} type='dark' />
 						</div>
 					</div>
-				</div>
 			</CardCustom>
-		</>
 	);
 }
 
