@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
+	allowedDevOrigins: ['192.168.0.188'],
 	env: {
 		BASE_URL: process.env.BASE_URL,
 	},
@@ -13,6 +14,7 @@ const nextConfig = {
 				pathname: '/**',
 			},
 		],
+		qualities: [25, 50, 75],
 	},
 };
 
