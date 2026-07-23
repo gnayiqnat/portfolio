@@ -1,4 +1,4 @@
-import { Card, Chip, Popover } from '@heroui/react';
+import { Button, Card, Chip, Popover } from '@heroui/react';
 
 import { FaReact } from 'react-icons/fa';
 import { SiMui } from 'react-icons/si';
@@ -15,7 +15,9 @@ const websites = [
 						I have put a greater emphasis into the animations of the website, giving
 						it life and bubbliness.`,
 		url: 'https://msssa.pages.dev',
+		github: 'https://github.com/gnayiqnat/msssa',
 		technologies: ['react', 'mui'],
+		sunset: true,
 	},
 	{
 		name: 'Digital Ascent',
@@ -29,6 +31,7 @@ const websites = [
 			</>
 		),
 		url: 'https://digiasc.pages.dev',
+		github: 'https://github.com/gnayiqnat/digiasce-nextui',
 		technologies: ['react'],
 		sunset: true,
 	},
@@ -132,8 +135,8 @@ function WebCard(n) {
 				>
 					<p>{properties.description}</p>
 				</Card.Content>
-				<Card.Footer className='flex flex-col items-start gap-y-3'>
-					<div className='flex gap-1'>
+				<Card.Footer className='flex flex-col items-start gap-y-3 mt-1'>
+					{/*	<div className='flex gap-1'>
 						<Chip className='rounded-sm bg-gray-900/90 text-blue-100 text-sm flex gap-2'>
 							<FaReact />
 							React
@@ -142,9 +145,22 @@ function WebCard(n) {
 							<SiMui />
 							Material UI
 						</Chip>
-					</div>
-					<div className=''>
-						<BorderButton type='normal' text='VISIT' url={properties.url} newTab={true} darkBg={n.type} />
+					</div> */}
+					<div className='flex flex-row gap-2'>
+						<BorderButton
+							type='normal'
+							text='VISIT'
+							url={properties.url}
+							newTab={true}
+							darkBg={n.type}
+						/>
+						<BorderButton
+							type='normal'
+							text='GITHUB'
+							url={properties.github}
+							newTab={true}
+							darkBg={n.type}
+						/>
 					</div>
 				</Card.Footer>
 			</Card>
