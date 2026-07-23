@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
-import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 import DateFromNow from '@/components/modules/date';
 import { extractHeadings } from '@/components/utils/extractHeadings';
 import TableOfContents from '@/components/modules/table-of-contents';
@@ -108,7 +107,6 @@ export default async function PostPage({ params }) {
 			{' '}
 			<ScrollToTop>
 				<ReactLenis root />
-				<MotionOpacityAnimation duration='0.5' delay='0'>
 					<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 						{' '}
 						<div className='pb-3 text-base sm:text-lg text-foreground/40'>
@@ -187,7 +185,6 @@ export default async function PostPage({ params }) {
 						</div>
 						<ScrollTopButton />
 					</main>
-				</MotionOpacityAnimation>
 			</ScrollToTop>
 		</>
 	);

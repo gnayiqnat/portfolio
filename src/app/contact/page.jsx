@@ -1,4 +1,3 @@
-import MotionOpacityAnimation from '@/components/animations/motion-opacity';
 import SocialsCard from '@/components/modules/socials-card';
 import ContactSection from '@/components/sections/contact';
 import { FaGithub } from 'react-icons/fa';
@@ -6,7 +5,6 @@ import { LuMail } from 'react-icons/lu';
 
 export default function ContactPage() {
 	return (
-		<MotionOpacityAnimation duration='0.5' delay='0'>
 			<div className='h-full w-11/12 mx-auto grid gap-6 lg:grid-cols-2 justify-center items-center'>
 				<ContactSection width='full' />
 				<div className='h-full max-w-230 bg-white dark:bg-foreground/3 rounded-sm border py-10 px-5 sm:px-8 flex flex-col gap-4 items-center justify-center'>
@@ -32,6 +30,5 @@ export default function ContactPage() {
 					</div>
 				</div>
 			</div>
-		</MotionOpacityAnimation>
 	);
 }
