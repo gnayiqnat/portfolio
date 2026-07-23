@@ -26,7 +26,6 @@ export default function NavBar() {
 					<div className='hidden md:flex flex-col md:flex-row gap-3'>
 						<NavButton text='Home' href='/' />
 						<NavButton text='Blog' href='/blog' />
-						<NavButton text='Projects' href='/projects' />
 						<NavButton text='Contact' href='/contact' />
 						<NavButton text='About' href='/about' />
 					</div>
@@ -80,7 +79,6 @@ function NavDrawer() {
 							<Drawer.Body className='mt-10 flex flex-col gap-3 **:w-full **:h-17 '>
 								<NavButton text='Home' href='/' />
 								<NavButton text='Blog' href='/blog' />
-								<NavButton text='Projects' href='/projects' />
 								<NavButton text='Contact' href='/contact' />
 								<NavButton text='About' href='/about' />
 							</Drawer.Body>
