@@ -15,7 +15,6 @@ export default function Home() {
 			<ReactLenis root options={{ autoRaf: true }} />
 			<div className='w-full flex flex-col justify-center items-center gap-10 sm:gap-15'>
 				<HeroSection />
-				<BlogSection />
 				<ProjectSection />
 				<ContactSection />
 				<TechstackSection />
