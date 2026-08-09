@@ -124,7 +124,7 @@ export default async function PostPage({ params }) {
 										</Chip>
 									))}
 							</div>
-							<h1 className='text-2xl/7  sm:text-3xl md:text-4xl lg:text-5xl font-bold sm:text-balance break-all text-foreground/95'>
+							<h1 className='text-2xl/7  sm:text-3xl md:text-4xl lg:text-5xl font-bold sm:text-balance text-foreground/95'>
 								{post.title}
 							</h1>
 							<DateFromNow date={post.publishedAt} />
@@ -145,30 +145,13 @@ export default async function PostPage({ params }) {
 									<p className='text-gray-500 ml-2'>{post.mainImage.alt}</p>
 								</div>
 							)}
-							<TableOfContents headings={headings} />
+							<div className='lg:hidden'>
+								<TableOfContents headings={headings} />
+							</div>
 							<PortableText value={post.body} components={components} />
 						</div>
-						<div className='flex flex-col items-center px-2 py-10 gap-3'>
-							<h2
-								className={` text-xl md:text-2xl font-jetbrains font-light text-foreground/60`}
-							>
-								{`-= { latest } =-`}
-							</h2>
-							<ul className='p-3 flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-col gap-5 lg:gap-y-2'>
-								{posts.map((post) => (
-									<li key={post._id}>
-										<BlogCard
-											title={post.title}
-											categories={post.categories && post.categories}
-											publishedAt={post.publishedAt}
-											imgSrc={post.mainImage && post.mainImage}
-											imgAlt={post.mainImage && post.mainImage}
-											slug={post.slug.current}
-											isFeatured={false}
-										/>
-									</li>
-								))}
-							</ul>
+						<div className='hidden lg:block fixed top-1/7 right-2 xl:right-12'>
+							<TableOfContents headings={headings} />
 						</div>
 					</div>
 					<ScrollTopButton />
