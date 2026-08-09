@@ -79,7 +79,12 @@ const components = {
 export default async function PostPage({ params }) {
 	const { slug } = await params;
 
-	const post = await client.fetch(POST_QUERY, { slug: slug });
+	const post = await client.fetch(
+		POST_QUERY,
+		{ slug: slug },
+		{ next: { revalidate: 60 } },
+	);
+	
 	/*const posts = await client.fetch(POSTS_QUERY, { limit: 4 });*/
 
 	const headings = extractHeadings(post.body);
