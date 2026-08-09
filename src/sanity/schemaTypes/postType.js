@@ -50,29 +50,25 @@ export const postType = defineType({
 			name: 'body',
 			type: 'blockContent',
 		}),
-		defineType({
-			name: 'content',
-			type: 'array',
-			title: 'Content',
-			of: [
-				{
-					type: 'block',
-				},
-				{
-					type: 'image',
-					fields: [
-						{
-							name: 'alt',
-							type: 'string',
-							title: 'Alternative text',
-							description: 'Important for SEO and accessiblity.',
-							options: {
-								isHighlighted: true,
-							},
-						},
-					],
-				},
-			],
+		defineField({
+			name: 'metaTitle',
+			title: 'Meta Title',
+			type: 'string',
+			description:
+				'Title used for browser tabs & search results (60 chars ideal).',
+		}),
+		defineField({
+			name: 'metaDescription',
+			title: 'Meta Description',
+			type: 'text',
+			rows: 3,
+			description: 'Description for search engines (150-160 chars).',
+		}),
+		defineField({
+			name: 'shareGraphic',
+			title: 'Share Graphic',
+			type: 'image',
+			description: 'Open Graph image (1200x630 px recommended).',
 		}),
 	],
 	preview: {

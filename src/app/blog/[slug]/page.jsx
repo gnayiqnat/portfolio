@@ -1,7 +1,12 @@
 import BlogCard from '@/components/modules/blog-card';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { POST_QUERY, POSTS_QUERY, SLUG_QUERY } from '@/sanity/lib/queries';
+import {
+	POST_QUERY,
+	POSTS_QUERY,
+	SEO_POST_QUERY,
+	SLUG_QUERY,
+} from '@/sanity/lib/queries';
 import { Button, Chip } from '@heroui/react';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
@@ -16,6 +21,43 @@ import ScrollTopButton from '@/components/modules/scroll-to-top-button';
 // Queries
 
 // Metadata
+export async function generateMetadata({ params }) {
+	const { slug } = await params;
+
+	const post = await client.fetch(SEO_POST_QUERY, { slug: slug });
+
+	const metaTitle = post?.metaTitle || post?.title || 'Untitled';
+	const metaDescription = post?.metaDescription || '';
+	let ogImage = null;
+	if (post?.shareGraphic?.asset) {
+		// check if asset exists
+		ogImage = urlFor(post.shareGraphic).width(1200).height(630).url();
+	} else if (post?.mainImage?.asset) {
+		// fallback to main image
+		ogImage = urlFor(post.mainImage).width(1200).height(630).url();
+	}
+
+	return {
+		title: metaTitle,
+		description: metaDescription,
+		publishedTime: post?.publishedAt,
+		openGraph: {
+			title: metaTitle,
+			description: metaDescription,
+			url: `https://tanqiyang.com/blog/${slug}`, // ← absolute URL
+			siteName: 'Tan Qi Yang', // ← optional
+			type: 'article',
+			publishedTime: post?.publishedAt,
+			images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : [],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: metaTitle,
+			description: metaDescription,
+			images: ogImage ? [ogImage] : [],
+		},
+	};
+}
 
 //
 export async function generateStaticParams() {
@@ -84,7 +126,7 @@ export default async function PostPage({ params }) {
 		{ slug: slug },
 		{ next: { revalidate: 60 } },
 	);
-	
+
 	/*const posts = await client.fetch(POSTS_QUERY, { limit: 4 });*/
 
 	const headings = extractHeadings(post.body);

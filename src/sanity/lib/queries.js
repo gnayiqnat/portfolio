@@ -25,6 +25,16 @@ _type == "post" && slug.current == $slug
   },
 }`;
 
+// Single Post - SEO Only
+export const SEO_POST_QUERY = `*[
+_type == "post" && slug.current == $slug
+][0]{
+  publishedAt,
+  metaTitle,
+  metaDescription,
+  shareGraphic,
+}`;
+
 // All Slugs
 export const SLUG_QUERY = `*[
 _type == "post" && defined(slug.current)
