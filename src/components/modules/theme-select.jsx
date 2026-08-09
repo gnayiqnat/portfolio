@@ -24,7 +24,7 @@ export default function ThemeSelector() {
 				setTheme(key);
 			}}
 		>
-			<Tabs.ListContainer>
+			<Tabs.ListContainer className='rounded-md'>
 				<Tabs.List
 					className='rounded-md border-2 border-foreground/30 bg-foreground/3 '
 					aria-label='Options'
