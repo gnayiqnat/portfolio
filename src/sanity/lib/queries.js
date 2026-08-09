@@ -3,11 +3,9 @@
 // All Posts
 export const POSTS_QUERY = `*[
   _type == "post"
-  && defined(slug.current)
-]|order(publishedAt asc)[0...$limit]{
+]|order(_createdAt desc)[0...$limit]{
 _id, title, slug, publishedAt, mainImage, categories[]-> {
     title,
-    "slug": slug.current
   }
 }`;
 
