@@ -10,7 +10,6 @@ import {
 import { Button, Chip } from '@heroui/react';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
-import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 import ScrollToTop from '@/components/providers/scrollToTop';
 import DateFromNow from '@/components/modules/date';
@@ -143,7 +142,6 @@ export default async function PostPage({ params }) {
 		<>
 			{' '}
 			<ScrollToTop>
-				<ReactLenis root />
 				<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 					{' '}
 					<div className='pb-3 text-base sm:text-lg text-foreground/40'>

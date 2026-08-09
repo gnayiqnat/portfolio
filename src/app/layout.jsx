@@ -7,6 +7,8 @@ import './globals.css';
 import Script from 'next/script';
 import { ThemeProvider } from '@wrksz/themes/next';
 import NavBar from '@/components/modules/nav-bar';
+import ReactLenis from 'lenis/react';
+import SmoothScroll from '@/components/providers/smoothScroll';
 
 const jetbrains = JetBrains_Mono({
 	variable: '--font-jetbrains-mono',
@@ -48,7 +50,9 @@ export default function RootLayout({ children }) {
 			<body className='min-h-full flex flex-col items-center'>
 				<ThemeProvider defaultTheme='light' enableSystem='false'>
 					<NavBar />
-					{children}
+					<SmoothScroll>
+						{children}
+					</SmoothScroll>
 				</ThemeProvider>{' '}
 				<Script
 					src='https://cloud.umami.is/script.js'
