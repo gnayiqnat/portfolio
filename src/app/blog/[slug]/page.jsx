@@ -131,9 +131,9 @@ export default async function PostPage({ params }) {
 						<div className='lg:col-span-2 flex flex-col gap-8'>
 							{post.mainImage && (
 								<div className='flex flex-col gap-2'>
-									<div className='relative h-90 w-full shrink-0 overflow-hidden rounded-md'>
+									<div className='relative h-96 w-full shrink-0 overflow-hidden rounded-md'>
 										<Image
-											className='pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none'
+											className='pointer-events-none absolute  h-full w-full scale-100 object-cover select-none'
 											src={urlFor(post.mainImage.asset._ref).url()}
 											alt={post.mainImage.alt}
 											fill={true}
