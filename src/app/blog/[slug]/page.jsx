@@ -98,9 +98,6 @@ export default async function PostPage({ params }) {
 				<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 					{' '}
 					<div className='pb-3 text-base sm:text-lg text-foreground/40'>
-						<Link className='hover:underline' href='/'>
-							HOME
-						</Link>{' '}
 						{'> '}
 						<Link className='hover:underline' href='/blog'>
 							BLOG
