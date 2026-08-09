@@ -67,7 +67,9 @@ const components = {
 						height={450}
 						className='rounded-lg'
 					/>
-					<p className='text-gray-500 ml-2'>{value.alt}</p>
+					<p className='text-gray-500 ml-2'>
+						{String(value.alt).startsWith('-') ? '' : value.alt}
+					</p>
 				</div>
 			);
 		},
@@ -77,8 +79,8 @@ const components = {
 export default async function PostPage({ params }) {
 	const { slug } = await params;
 
-	const post = await client.fetch(POST_QUERY, { slug: slug })
-	const posts = await client.fetch(POSTS_QUERY, { limit: 4 });
+	const post = await client.fetch(POST_QUERY, { slug: slug });
+	/*const posts = await client.fetch(POSTS_QUERY, { limit: 4 });*/
 
 	const headings = extractHeadings(post.body);
 
@@ -98,7 +100,6 @@ export default async function PostPage({ params }) {
 				<main className='container mx-auto gap-6 p-8 sm:px-12 pt-30 max-w-7xl'>
 					{' '}
 					<div className='pb-3 text-base sm:text-lg text-foreground/40'>
-						{'> '}
 						<Link className='hover:underline' href='/blog'>
 							BLOG
 						</Link>{' '}
