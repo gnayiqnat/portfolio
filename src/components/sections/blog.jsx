@@ -1,14 +1,11 @@
 import { POSTS_QUERY } from '@/sanity/lib/queries';
 import BlogCard from '../modules/blog-card';
-import { sanityFetch } from '@/sanity/lib/live';
 import CardCustom from '../animations/motion-card';
 import BorderButton from '../modules/border-button';
+import { client } from '@/sanity/lib/client';
 
 export default async function BlogSection() {
-	const { data: posts = [] } = await sanityFetch({
-		query: POSTS_QUERY,
-		params: { limit: 3 },
-	});
+	const { data: posts = [] } = await client.fetch(POSTS_QUERY);
 
 	return (
 		<>
