@@ -13,7 +13,7 @@ export default async function IndexPage() {
 	return (
 		<>
 			{' '}
-			<main className='pt-22 mt-5 container mx-auto min-h-screen max-w-6xl flex flex-col gap-7 p-8 sm:px-32 md:px-48 lg:px-20'>
+			<main className='pt-22 mt-5 container mx-auto max-w-6xl flex flex-col gap-7 p-8 sm:px-32 md:px-48 lg:px-20'>
 				<div className='pb-3 text-lg text-foreground/40'>
 					<p className='text-3xl ml-5 pt-5 text-foreground/80'>-- BLOG ---------</p>
 				</div>
