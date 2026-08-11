@@ -3,7 +3,7 @@ import Footer from '@/components/sections/footer';
 export default function PrivacyPage() {
 	return (
 		<>
-			<div className='w-full max-w-4xl flex flex-col gap-20 mt-30 p-10 text-lg'>
+			<div className='w-full max-w-4xl flex flex-col gap-20 mt-30 p-5 md:p-10 text-lg'>
 				<div>
 					<h1 className='text-4xl font-bold'>--Privacy Policy---</h1>
 					<p>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
 							<strong>Umami Cloud</strong> — Privacy-focused website analytics.
 						</li>
 						<li>
-							<strong>Sanity CMS</strong>Content management system and database for our
+							<strong>Sanity CMS</strong>- Content management system and database for our
 							blog.
 						</li>
 						<li>
