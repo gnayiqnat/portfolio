@@ -37,3 +37,14 @@ _type == "post" && slug.current == $slug
 export const SLUG_QUERY = `*[
 _type == "post" && defined(slug.current)
 ]{ "slug": slug.current }`;
+
+// RSS Feed
+export const RSS_QUERY = `*[
+  _type == "post"
+]|order(_createdAt desc)[0...$limit]{
+_id, slug,
+  mainImage,
+  publishedAt,
+  metaTitle,
+  metaDescription,
+}`;
