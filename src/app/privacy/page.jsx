@@ -12,9 +12,9 @@ export default function PrivacyPage() {
 				</div>
 
 				<p>
-					This Privacy Policy explains how [Your Name / Business Name] ("we", "us",
-					or "our") collects, uses, and protects information when you visit
-					[yourwebsite.com] (the "Website").
+					This Privacy Policy explains how <strong> Tan Qi Yang</strong> ("we",
+					"us", or "our") collects, uses, and protects information when you visit
+					<strong> tanqiyang.com</strong> (the "Website").
 					<br />
 					<br />
 					We aim to collect as little personal information as reasonably necessary to
@@ -24,7 +24,8 @@ export default function PrivacyPage() {
 				<div>
 					<h2 className='text-3xl font-bold'>1. Information We Collect</h2>
 					<br />
-					<h3 className='text-2xl font-bold'>Contact Form</h3><br/>
+					<h3 className='text-2xl font-bold'>Contact Form</h3>
+					<br />
 					<p>If you contact us through the Website, you may provide:</p>
 					<ul className='font-bold'>
 						<li>- Your name</li>
@@ -88,6 +89,10 @@ export default function PrivacyPage() {
 						</li>
 						<li>
 							<strong>Umami Cloud</strong> — Privacy-focused website analytics.
+						</li>
+						<li>
+							<strong>Sanity CMS</strong>Content management system and database for our
+							blog.
 						</li>
 						<li>
 							<strong>Web3Forms</strong> — Processing and forwarding contact form
