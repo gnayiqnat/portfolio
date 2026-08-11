@@ -1,5 +1,17 @@
 import Footer from '@/components/sections/footer';
 
+export const metadata = {
+	robots: {
+		index: false,
+		follow: true,
+		nocache: false,
+		googleBot: {
+			index: false,
+			follow: true,
+		},
+	},
+};
+
 export default function PrivacyPage() {
 	return (
 		<>
@@ -12,8 +24,8 @@ export default function PrivacyPage() {
 				</div>
 
 				<p>
-					This Privacy Policy explains how <strong> Tan Qi Yang</strong> ("we",
-					"us", or "our") collects, uses, and protects information when you visit
+					This Privacy Policy explains how <strong> Tan Qi Yang</strong> ("we", "us",
+					or "our") collects, uses, and protects information when you visit
 					<strong> tanqiyang.com</strong> (the "Website").
 					<br />
 					<br />
@@ -91,8 +103,8 @@ export default function PrivacyPage() {
 							<strong>Umami Cloud</strong> — Privacy-focused website analytics.
 						</li>
 						<li>
-							<strong>Sanity CMS</strong>- Content management system and database for our
-							blog.
+							<strong>Sanity CMS</strong>- Content management system and database for
+							our blog.
 						</li>
 						<li>
 							<strong>Web3Forms</strong> — Processing and forwarding contact form
