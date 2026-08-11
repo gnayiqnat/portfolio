@@ -5,7 +5,7 @@ import { Separator } from '@heroui/react';
 export default function Footer() {
 	return (
 		<>
-			<div className='w-full h-50 px-10 py-50 md:p-50 gap-20 flex flex-col justify-around items-center text-foreground/70'>
+			<footer className='w-full h-50 px-10 py-50 md:p-50 gap-20 flex flex-col justify-around items-center text-foreground/70'>
 				<div className='flex flex-row gap-3 justify-center items-center'>
 					<Logo />
 					<Separator orientation='vertical' />
@@ -29,7 +29,7 @@ export default function Footer() {
 						.
 					</p>
 				</div>
-			</div>
+			</footer>
 		</>
 	);
 }
