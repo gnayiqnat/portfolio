@@ -1,6 +1,9 @@
 import { Feed } from 'feed';
+
 import { client } from '@/sanity/lib/client';
 import { RSS_QUERY } from '@/sanity/lib/queries';
+import { urlFor } from '@/sanity/lib/image';
+
 
 export const revalidate = 3600;
 
@@ -10,7 +13,7 @@ export async function GET() {
 	const posts = await client.fetch(RSS_QUERY, {limit: 100});
 
 	const feed = new Feed({
-		title: `Tan Qi Yang's Blog`,
+		title: `Tan Qi Yang`,
 		description: 'I do stuff.',
 		id: SITE_URL,
 		link: SITE_URL,
@@ -26,6 +29,7 @@ export async function GET() {
 	posts.forEach((post: any) => {
 		feed.addItem({
 			title: post.metaTitle,
+			image: urlFor(post.mainImage.asset._ref).url(),
 			id: `${SITE_URL}/blog/${post.slug.current}`,
 			link: `${SITE_URL}/blog/${post.slug.current}`,
 			description: post.metaDescription,
