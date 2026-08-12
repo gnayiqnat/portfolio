@@ -15,9 +15,9 @@ export const metadata = {
 export default function PrivacyPage() {
 	return (
 		<>
-			<div className='w-full max-w-4xl flex flex-col gap-20 mt-30 p-5 md:p-10 text-lg'>
+			<div className='w-full max-w-4xl flex flex-col gap-20 mt-30 p-5 md:p-10 text-base md:text-lg'>
 				<div>
-					<h1 className='text-4xl font-bold'>--Privacy Policy---</h1>
+					<h1 className='text-3xl md:text-4xl font-bold'>--Privacy Policy---</h1>
 					<p>
 						<em>Last updated: 11 August 2026</em>
 					</p>
@@ -34,7 +34,9 @@ export default function PrivacyPage() {
 				</p>
 
 				<div>
-					<h2 className='text-3xl font-bold'>1. Information We Collect</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>
+						1. Information We Collect
+					</h2>
 					<br />
 					<h3 className='text-2xl font-bold'>Contact Form</h3>
 					<br />
@@ -91,7 +93,7 @@ export default function PrivacyPage() {
 					</p>
 				</div>
 				<div>
-					<h2 className='text-3xl font-bold'>2. Third-Party Services</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>2. Third-Party Services</h2>
 					<br />
 					<p>We use the following third-party services to operate the Website:</p>
 					<br />
@@ -142,7 +144,9 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>3. How We Use Personal Information</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>
+						3. How We Use Personal Information
+					</h2>
 					<br />
 					<p>We may use information you provide to:</p>
 					<br />
@@ -163,7 +167,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>4. Cookies</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>4. Cookies</h2>
 					<br />
 					<p>
 						The Website does not intentionally use cookies for advertising or
@@ -182,7 +186,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>5. Data Retention</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>5. Data Retention</h2>
 					<br />
 					<p>
 						We keep personal information only for as long as reasonably necessary for
@@ -213,7 +217,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>
+					<h2 className='text-2xl md:text-3xl font-bold'>
 						6. Disclosure of Personal Information
 					</h2>
 					<br />
@@ -231,7 +235,7 @@ export default function PrivacyPage() {
 					<p>We do not sell personal information to third parties.</p>
 				</div>
 				<div>
-					<h2 className='text-3xl font-bold'>7. Your Rights</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>7. Your Rights</h2>
 					<br />
 					<p>
 						Where applicable under Malaysian law, you may have rights regarding your
@@ -258,7 +262,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>8. Security</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>8. Security</h2>
 					<br />
 					<p>
 						We take reasonable technical and organisational measures to protect
@@ -273,7 +277,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>9. Children's Privacy</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>9. Children's Privacy</h2>
 					<br />
 					<p>
 						This Website is not specifically directed toward children, and we do not
@@ -286,7 +290,9 @@ export default function PrivacyPage() {
 					</p>
 				</div>
 				<div>
-					<h2 className='text-3xl font-bold'>10. Changes to This Privacy Policy</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>
+						10. Changes to This Privacy Policy
+					</h2>
 					<br />
 					<p>We may update this Privacy Policy from time to time.</p>
 					<br />
@@ -297,7 +303,7 @@ export default function PrivacyPage() {
 				</div>
 
 				<div>
-					<h2 className='text-3xl font-bold'>11. Contact Us</h2>
+					<h2 className='text-2xl md:text-3xl font-bold'>11. Contact Us</h2>
 					<br />
 					<p>
 						If you have any questions about this Privacy Policy or how your personal
