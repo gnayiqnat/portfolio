@@ -1,8 +1,9 @@
 import { POSTS_QUERY } from '@/sanity/lib/queries';
 import BlogCard from '../modules/blog-card';
 import CardCustom from '../animations/motion-card';
-import BorderButton from '../modules/border-button';
 import { client } from '@/sanity/lib/client';
+import { LuExternalLink } from 'react-icons/lu';
+import BorderButtonLink from '../modules/border-button-link';
 
 export default async function BlogSection() {
 	const { data: posts = [] } = await client.fetch(POSTS_QUERY);
@@ -30,7 +31,12 @@ export default async function BlogSection() {
 						/>
 					))}
 					<div className='w-full flex justify-center mt-7'>
-						<BorderButton type='large' text='VIEW ALL POSTS' url='/blog' />
+						<BorderButtonLink
+							type='large'
+							text='VIEW ALL POSTS'
+							url='/blog'
+							icon={<LuExternalLink />}
+						/>
 					</div>
 				</div>
 			</CardCustom>

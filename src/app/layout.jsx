@@ -9,6 +9,7 @@ import { ThemeProvider } from '@wrksz/themes/next';
 import NavBar from '@/components/modules/nav-bar';
 import ReactLenis from 'lenis/react';
 import SmoothScroll from '@/components/providers/smoothScroll';
+import { Toast } from '@heroui/react';
 
 const jetbrains = JetBrains_Mono({
 	variable: '--font-jetbrains-mono',
@@ -48,11 +49,13 @@ export default function RootLayout({ children }) {
 			suppressHydrationWarning
 		>
 			<body className='min-h-full flex flex-col items-center'>
+				<Toast.Provider
+					placement='bottom'
+					className='**:text-base'
+				/>
 				<ThemeProvider defaultTheme='light' enableSystem='false'>
 					<NavBar />
-					<SmoothScroll>
-						{children}
-					</SmoothScroll>
+					<SmoothScroll>{children}</SmoothScroll>
 				</ThemeProvider>{' '}
 				<Script
 					src='https://cloud.umami.is/script.js'

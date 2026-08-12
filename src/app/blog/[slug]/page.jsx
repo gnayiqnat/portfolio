@@ -16,6 +16,9 @@ import DateFromNow from '@/components/modules/date';
 import { extractHeadings } from '@/components/utils/extractHeadings';
 import TableOfContents from '@/components/modules/table-of-contents';
 import ScrollTopButton from '@/components/modules/scroll-to-top-button';
+import BorderButtonCopy from '@/components/modules/border-button-action';
+import { FaRssSquare } from 'react-icons/fa';
+import { LuShare2 } from 'react-icons/lu';
 
 // Queries
 
@@ -175,6 +178,22 @@ export default async function PostPage({ params }) {
 					</div>
 					<div className='grid lg:grid-cols-3 gap-8'>
 						<div className='lg:col-span-2 flex flex-col gap-8'>
+							<div className='flex flex-row gap-3'>
+								<BorderButtonCopy
+									url={`https://tanqiyang.com/${slug}`}
+									text='Share'
+									successText='Link Copied!'
+									successDescription='Share Link copied to clipboard'
+									icon={<LuShare2 />}
+								/>
+								<BorderButtonCopy
+									url='https://tanqiyang.com/blog/feed.xml'
+									text='Copy RSS Link'
+									successText='Copied RSS Link!'
+									successDescription='RSS link copied to clipboard'
+									icon={<FaRssSquare />}
+								/>
+							</div>
 							{post.mainImage && (
 								<div className='flex flex-col gap-2'>
 									<div className='relative h-96 w-full shrink-0 overflow-hidden rounded-md'>
@@ -188,6 +207,7 @@ export default async function PostPage({ params }) {
 									<p className='text-gray-500 ml-2'>{post.mainImage.alt}</p>
 								</div>
 							)}
+
 							<div className='lg:hidden'>
 								<TableOfContents headings={headings} />
 							</div>

@@ -1,10 +1,8 @@
-import { Button, Card, Chip, Popover } from '@heroui/react';
+import { Card, Chip, Popover } from '@heroui/react';
 
-import { FaReact } from 'react-icons/fa';
-import { SiMui } from 'react-icons/si';
 import CardCustom from '../animations/motion-card';
-import { LuInfo } from 'react-icons/lu';
-import BorderButton from '../modules/border-button';
+import { LuExternalLink, LuGithub, LuInfo } from 'react-icons/lu';
+import BorderButtonLink from '../modules/border-button-link';
 
 const websites = [
 	{
@@ -39,20 +37,19 @@ const websites = [
 
 export default function ProjectSection() {
 	return (
-			<CardCustom id='projects'>
-					<div className='w-full flex flex-col justify-center items-center gap-3'>
-						<h2
-							className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
-						>
-							{`>~== { projects } ==~<`}{' '}
-							{/*{`--->>>~=== { projects } ===~<<<<<---`} */}
-						</h2>{' '}
-						<h3 className='px-0 sm:px-8 font-jetbrains max-w-125 text-gray-500 text-center text-balance'>
-							A full collection of both professional projects and stupid ideas.
-						</h3>
-					</div>
-					<div className='justify-around items-between w-full'>
-						{/*<div className='h-fit w-fit'>
+		<CardCustom id='projects'>
+			<div className='w-full flex flex-col justify-center items-center gap-3'>
+				<h2
+					className={` text-xl md:text-2xl font-jetbrains font-light text-foreground`}
+				>
+					{`>~== { projects } ==~<`} {/*{`--->>>~=== { projects } ===~<<<<<---`} */}
+				</h2>{' '}
+				<h3 className='px-0 sm:px-8 font-jetbrains max-w-125 text-gray-500 text-center text-balance'>
+					A full collection of both professional projects and stupid ideas.
+				</h3>
+			</div>
+			<div className='justify-around items-between w-full'>
+				{/*<div className='h-fit w-fit'>
 							<motion.ul className='flex flex-rows gap-2'>
 								<motion.li>
 									<Button variant='ghost' className='rounded-sm'>
@@ -65,12 +62,12 @@ export default function ProjectSection() {
 							</motion.ul>
 						</div>
 						 */}
-						<div className='p-3 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-6 flex-wrap h-fit w-fit'>
-							<WebCard website={websites[0]} />
-							<WebCard website={websites[1]} type='dark' />
-						</div>
-					</div>
-			</CardCustom>
+				<div className='p-3 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-6 flex-wrap h-fit w-fit'>
+					<WebCard website={websites[0]} />
+					<WebCard website={websites[1]} type='dark' />
+				</div>
+			</div>
+		</CardCustom>
 	);
 }
 
@@ -147,19 +144,21 @@ function WebCard(n) {
 						</Chip>
 					</div> */}
 					<div className='flex flex-row gap-2'>
-						<BorderButton
+						<BorderButtonLink
 							type='normal'
 							text='VISIT'
 							url={properties.url}
 							newTab={true}
 							darkBg={n.type}
+							icon={<LuExternalLink />}
 						/>
-						<BorderButton
+						<BorderButtonLink
 							type='normal'
 							text='GITHUB'
 							url={properties.github}
 							newTab={true}
 							darkBg={n.type}
+							icon={<LuGithub />}
 						/>
 					</div>
 				</Card.Footer>
