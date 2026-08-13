@@ -6,7 +6,7 @@ import { LuExternalLink } from 'react-icons/lu';
 import BorderButtonLink from '../modules/border-button-link';
 
 export default async function BlogSection() {
-	const { data: posts = [] } = await client.fetch(POSTS_QUERY);
+	const posts = await client.fetch(POSTS_QUERY, {limit: 3});
 
 	return (
 		<>
