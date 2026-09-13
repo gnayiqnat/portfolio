@@ -1,5 +1,18 @@
 import BorderButtonLink from '@/components/modules/border-button-link';
 
+export const metadata = {
+	title: '404',
+	robots: {
+		index: false,
+		follow: true,
+		nocache: false,
+		googleBot: {
+			index: false,
+			follow: true,
+		},
+	},
+};
+
 export default function Page404() {
 	return (
 		<div className='pt-20 p-3 h-svh w-vw flex flex-col gap-30 justify-center items-center'>

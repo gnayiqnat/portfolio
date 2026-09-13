@@ -19,6 +19,7 @@ import ScrollTopButton from '@/components/modules/scroll-to-top-button';
 import BorderButtonCopy from '@/components/modules/border-button-action';
 import { FaRssSquare } from 'react-icons/fa';
 import { LuShare2 } from 'react-icons/lu';
+import { notFound } from 'next/navigation';
 
 // Queries
 
@@ -129,17 +130,13 @@ export default async function PostPage({ params }) {
 		{ next: { revalidate: 60 } },
 	);
 
+	if (!post) {
+		notFound();
+	}
+
 	/*const posts = await client.fetch(POSTS_QUERY, { limit: 4 });*/
 
 	const headings = extractHeadings(post.body);
-
-	if (!post) {
-		return (
-			<main className='p-8'>
-				<h1>Post not found</h1>
-			</main>
-		);
-	}
 
 	return (
 		<>
