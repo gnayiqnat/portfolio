@@ -13,12 +13,6 @@ export default function sitemap() {
 			priority: 0.8,
 		},
 		{
-			url: 'https://tanqiyang.com/projects',
-			lastModified: new Date(),
-			changeFrequency: 'monthly',
-			priority: 0.3,
-		},
-		{
 			url: 'https://tanqiyang.com/contact',
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
