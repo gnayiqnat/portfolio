@@ -4,14 +4,14 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const ContentSecurityPolicy = `
     default-src 'none';
-    script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''} https://*.umami.is https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
+    script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''} https://*.umami.is https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com https://*.sanity-cdn.com;
     frame-src 'self' https://hcaptcha.com https://*.hcaptcha.com;
 		style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com;
     img-src 'self' blob: data: https://cdn.sanity.io https://*.hcaptcha.com;
-    font-src 'self';
+    font-src 'self' https://*.sanity.io;
     object-src 'none';
     base-uri 'self';
-    connect-src 'self' https://gateway.umami.is https://hcaptcha.com https://*.hcaptcha.com https://api.web3forms.com;
+    connect-src 'self' https://gateway.umami.is https://hcaptcha.com https://*.hcaptcha.com https://api.web3forms.com https://*.sanity.io wss://*.api.sanity.io https://sanity-cdn.com;
     form-action 'self' https://api.web3forms.com;
     frame-ancestors 'none'; 
     upgrade-insecure-requests;
