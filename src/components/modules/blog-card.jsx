@@ -4,7 +4,6 @@ import { LuMessageSquare } from 'react-icons/lu';
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
-import { imageLoader } from 'next-sanity/image';
 import DateFromNow from './date';
 
 export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt, slug, isFeatured}) {
@@ -20,7 +19,6 @@ export default function BlogCard({title, categories, publishedAt, imgSrc, imgAlt
 					>
 						{imgSrc ? (
 							<Image
-								loader={imageLoader}
 								loading='eager'
 								className='pointer-events-none absolute inset-0 h-full w-full scale-100 object-cover select-none'
 								src={urlFor(imgSrc.asset._ref).url()}
